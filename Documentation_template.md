@@ -1,7 +1,7 @@
 # ML Challenge 2026: Business Entity Resolution Solution Template
 
 **Team Name:** BrawlDevs  
-**Team Members:**   
+**Team Members:**  
 **Submission Date:** September 26, 2026  
 
 ---
