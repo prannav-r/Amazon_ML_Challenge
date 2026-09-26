@@ -19,10 +19,10 @@ env.bak/
 venv.bak/
 
 # --- Large Datasets & Raw Resources ---
-# Do not track gigabyte-scale challenge datasets
+# Do not track gigabyte-scale challenge datasets or downloaded resource bundle
+student_resource/
 dataset/
 **/dataset/
-student_resource/dataset/
 *.tsv
 *.csv
 *.parquet
@@ -63,10 +63,12 @@ checkpoints/
 *.model
 *.lgb
 *.xgb
+!output/frozen_model_c1.pkl
 
 # --- Submission Outputs & Logs ---
 output/*
 !output/.gitkeep
+!output/frozen_model_c1.pkl
 *.log
 logs/
 

@@ -141,6 +141,29 @@ cd Amazon_ML_Challenge
 pip install -r requirements.txt
 ```
 
+### Dataset Setup
+Download the official `student_resource` bundle from the challenge dataset portal and extract/place it directly in the project root:
+
+```text
+Amazon_ML_Challenge/
+├── student_resource/
+│   ├── dataset/
+│   │   ├── train/
+│   │   │   ├── train_source1.tsv
+│   │   │   ├── train_source2.tsv
+│   │   │   ├── train_source3.tsv
+│   │   │   └── train_ground_truth.tsv
+│   │   └── test/
+│   │       ├── test_source1.tsv
+│   │       ├── test_source2.tsv
+│   │       └── test_source3.tsv
+│   └── utils/
+│       └── validate_submission.py
+```
+
+> [!NOTE]
+> The `student_resource/` directory contains multi-gigabyte raw competition datasets and is automatically excluded from version control via `.gitignore`.
+
 ### Run Smoke Test (~40 seconds)
 Runs the complete end-to-end pipeline (ingestion, normalization, blocking, 65-feature extraction, model loading, scoring, and output generation) on a deterministic sample of 50 test entities:
 
@@ -149,7 +172,7 @@ python run_pipeline.py --smoke-test --limit 50 --output-dir output
 ```
 
 ### Full Test Inference
-To run inference on the full test dataset:
+To run inference on the full test dataset using the pre-trained model:
 
 ```bash
 python run_pipeline.py \
@@ -158,6 +181,21 @@ python run_pipeline.py \
     --threshold 0.88 \
     --cap 150
 ```
+
+### Train from Scratch and Infer
+If `output/frozen_model_c1.pkl` is absent, or if you pass `--train`, the pipeline automatically trains Model C1 from raw training data (`dataset/train`) first, saves `output/frozen_model_c1.pkl`, and then executes test inference to generate both output TSV files:
+
+```bash
+python run_pipeline.py \
+    --train \
+    --train-dir student_resource/dataset/train \
+    --data-dir student_resource/dataset/test \
+    --output-dir output
+```
+
+Both modes generate the two official submission deliverables:
+- `output/matching_results.tsv`
+- `output/candidate_pairs.tsv`
 
 ### Validate Submission Deliverables
 Validate outputs using the official competition validator:
