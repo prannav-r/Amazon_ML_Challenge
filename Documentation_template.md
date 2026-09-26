@@ -1,7 +1,7 @@
 # ML Challenge 2026: Business Entity Resolution Solution Template
 
 **Team Name:** BrawlDevs  
-**Team Members:** Sai Pranav S R\
+**Team Members:** \Sai Pranav S R\
  Prannav R\
  Priyajit Biswal\
  Pretham Kumar K\
