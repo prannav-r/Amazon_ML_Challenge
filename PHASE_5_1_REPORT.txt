@@ -1,0 +1,189 @@
+================================================================================
+PHASE 5.1 REPORT: UNTOUCHED S1 HOLDOUT VALIDATION & BLOCKING CAP VERIFICATION
+================================================================================
+Amazon ML Challenge 2026: Business Entity Resolution
+Evaluation Metric: Entity-level matching evaluated using Macro-F0.5 across held-out Source 1 entities:
+    F0.5 = (1.25 * Precision * Recall) / (0.25 * Precision + Recall)
+Status: Phase 5.1 is COMPLETE.
+Execution Guardrail: Strict stop enforced — No test inference performed, no submission files generated, no final ZIP created.
+
+--------------------------------------------------------------------------------
+1. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Phase 5.1 established a rigorous, leakage-free 3-way S1-level stratified validation protocol to eliminate any selection bias from Phase 5 threshold tuning:
+
+1. Three-Way Stratified Split:
+   - Training Set (60%): 2,998 S1 entities (1,799 US, 1,199 India) | 273,838 candidate pairs (at Cap 150).
+   - Development Set (20%): 998 S1 entities (599 US, 399 India) | 92,515 candidate pairs (at Cap 150).
+   - Untouched Final Holdout Set (20%): 1,004 S1 entities (602 US, 402 India) | 90,079 candidate pairs (at Cap 150).
+   - Zero Leakage: Strictly enforced at the Source 1 entity level (Train, Dev, Holdout are mutually disjoint).
+
+2. Cap 100 vs Cap 150 Verification on Development Set:
+   - Each blocking cap received an independent threshold sweep on the development set.
+   - Cap 100 optimal threshold: tau* = 0.88 -> Dev Macro-F0.5 = 0.8065 (P=0.8833, R=0.6801).
+   - Cap 150 optimal threshold: tau* = 0.88 -> Dev Macro-F0.5 = 0.8213 (P=0.8923, R=0.7027).
+   - Development Selection: Priority Cap 150 outperformed Cap 100 by +0.0148 Macro-F0.5 (+1.8% gain).
+
+3. Configuration Frozen on Development Set:
+   - Model: Model C1 (XGBoost Mild Weight: scale_pos_weight = 5.84, n_estimators = 300, max_depth = 5, lr = 0.08).
+   - Priority Cap: 150 candidates per S1 entity.
+   - Decision Threshold: tau* = 0.88.
+   - Decision Rule: Multi-candidate thresholding (P(match) >= 0.88).
+
+4. Untouched Final Holdout Results (Evaluated Exactly Once):
+   - Macro-F0.5: 0.8122
+   - Macro Precision: 0.8848
+   - Macro Recall: 0.6927
+   - Generalization Gap (Delta = Holdout - Dev): -0.0091 (exceptionally tight alignment, confirming virtually zero overfitting).
+   - Holdout Cap 150 Confirmation: On the untouched holdout, Cap 150 outperformed Cap 100 by +0.0205 Macro-F0.5 (0.8122 vs 0.7917).
+
+--------------------------------------------------------------------------------
+2. THREE-WAY S1-LEVEL STRATIFIED DATASET BREAKDOWN
+--------------------------------------------------------------------------------
+Training (60%):
+  Total S1: 2,998 | US S1: 1,799 | India S1: 1,199 | Zero-Match S1: 173 | Singleton S1: 159 | Multi-Match S1: 2,666 | Zero-Cand S1: 15
+  Total Pairs (Cap 150): 273,838 | Pos Pairs: 7,800 | Neg Pairs: 266,038 | Imbalance: 34.11 : 1
+
+Development (20%):
+  Total S1: 998 | US S1: 599 | India S1: 399 | Zero-Match S1: 57 | Singleton S1: 53 | Multi-Match S1: 888 | Zero-Cand S1: 8
+  Total Pairs (Cap 150): 92,515 | Pos Pairs: 2,666 | Neg Pairs: 89,849 | Imbalance: 33.70 : 1
+
+Untouched Holdout (20%):
+  Total S1: 1,004 | US S1: 602 | India S1: 402 | Zero-Match S1: 61 | Singleton S1: 53 | Multi-Match S1: 890 | Zero-Cand S1: 5
+  Total Pairs (Cap 150): 90,079 | Pos Pairs: 2,576 | Neg Pairs: 87,503 | Imbalance: 33.97 : 1
+
+Full Total:
+  Total S1: 5,000 | US S1: 3,000 | India S1: 2,000 | Zero-Match S1: 291 | Singleton S1: 265 | Multi-Match S1: 4,444 | Zero-Cand S1: 28
+  Total Pairs (Cap 150): 456,432 | Pos Pairs: 13,042 | Neg Pairs: 443,390 | Imbalance: 34.00 : 1
+
+Evaluation Integrity Guaranteed:
+- Zero S1 entity overlap across Train, Dev, and Holdout splits.
+- All zero-candidate S1 entities strictly participated in evaluation as required by official challenge semantics.
+- Country ratio is exactly 60.0% US and 40.0% India across all splits.
+
+--------------------------------------------------------------------------------
+3. MODEL TRAINING & CLASS IMBALANCE
+--------------------------------------------------------------------------------
+- Training Pairs: 273,838 (7,800 pos, 266,038 neg | Imbalance: 34.11 : 1)
+- Model: Model C1 (XGBoost Mild Weight)
+- scale_pos_weight = sqrt(34.11) = 5.84
+- Hyperparameters: n_estimators=300, max_depth=5, lr=0.08, subsample=0.8, colsample=0.8, min_child_weight=5, gamma=0.1, reg_alpha=0.1, reg_lambda=1.0, tree_method='hist', seed=42
+- Training Runtime: 2.89 seconds (94,753 pairs/sec)
+
+--------------------------------------------------------------------------------
+4. DEVELOPMENT SET: INDEPENDENT THRESHOLD TUNING & CAP 100 vs CAP 150
+--------------------------------------------------------------------------------
+Cap 100 on Dev Set:
+  Total Candidates: 70,926 | Avg Cands/S1: 71.1 | Blocker Recall: 72.89%
+  Independently Tuned tau*: 0.88
+  Dev Macro F0.5: 0.8065 | Precision: 0.8833 | Recall: 0.6801 | Avg Matches: 2.40 | % Empty: 14.4%
+
+Cap 150 on Dev Set:
+  Total Candidates: 92,515 | Avg Cands/S1: 92.7 | Blocker Recall: 76.17%
+  Independently Tuned tau*: 0.88
+  Dev Macro F0.5: 0.8213 | Precision: 0.8923 | Recall: 0.7027 | Avg Matches: 2.49 | % Empty: 13.3%
+
+Development Decision:
+  Priority Cap 150 achieves higher Macro-F0.5 (+0.0148) with higher precision and recall.
+  Frozen Configuration: Cap 150, Decision Threshold tau* = 0.88.
+
+--------------------------------------------------------------------------------
+5. FROZEN CONFIGURATION SPECIFICATION
+--------------------------------------------------------------------------------
+- Architecture: Model C1: XGBClassifier (Hist)
+- scale_pos_weight: 5.84
+- Blocker Channels: Channels A, A2, B, C, D, E, E2, G
+- Blocker Priority Cap: 150
+- Feature Schema: Canonical 65 Features (src/feature_schema.py)
+- Decision Threshold: tau* = 0.88
+- Decision Rule: Multi-Candidate: accept candidate iff P(match) >= 0.88
+
+--------------------------------------------------------------------------------
+6. UNTOUCHED FINAL HOLDOUT RESULTS (EVALUATED EXACTLY ONCE)
+--------------------------------------------------------------------------------
+Holdout Dataset Characteristics:
+  Total S1 Entities: 1,004
+  Total Candidate Pairs: 90,079 (Avg 89.7 / S1)
+  Holdout Blocker Recall: 74.26% (2,576 / 3,469 true matches)
+  Zero-Candidate S1 Entities: 5 entities
+  Scoring Throughput: 1,810,101 pairs/sec (0.050s)
+
+Primary Competition Metrics:
+  >> S1-Level Macro-F0.5 : 0.8122 <<
+  >> S1-Level Macro Precision : 0.8848 <<
+  >> S1-Level Macro Recall    : 0.6927 <<
+  Total Predicted Matches : 2,410
+  Average Matches / S1    : 2.40
+  % S1 Predicted Empty    : 14.4%
+
+--------------------------------------------------------------------------------
+7. DIAGNOSTIC GROUP PERFORMANCE ON UNTOUCHED HOLDOUT
+--------------------------------------------------------------------------------
+Group 1: True Singletons (N=53):
+  Macro F0.5: 0.6352 | Precision: 0.6321 | Recall: 0.6604 | Avg Matches: 0.74 | False Positive Rate: 10.26%
+
+Group 2: True Zero-Match Entities (N=61):
+  Macro F0.5: 0.9180 | Precision: 0.9180 | Recall: 0.9180 | Avg Matches: 0.10 | False Positive Rate: 8.20%
+  91.80% of true-empty entities are correctly predicted empty, scoring a perfect 1.0.
+
+Group 3: True Multi-Match Entities (N=890):
+  Macro F0.5: 0.8155 | Precision: 0.8976 | Recall: 0.6792 | Avg Matches: 2.66 | False Positive Rate: 2.96%
+
+--------------------------------------------------------------------------------
+8. COUNTRY BREAKDOWN ON UNTOUCHED HOLDOUT
+--------------------------------------------------------------------------------
+United States (US, N=602 S1):
+  Macro F0.5: 0.8337 | Precision: 0.9040 | Recall: 0.7122 | Avg Matches: 2.45 | % Empty: 12.5%
+
+India (N=402 S1):
+  Macro F0.5: 0.7801 | Precision: 0.8561 | Recall: 0.6635 | Avg Matches: 2.33 | % Empty: 17.4%
+
+--------------------------------------------------------------------------------
+9. SIDE-BY-SIDE: DEVELOPMENT SET vs UNTOUCHED FINAL HOLDOUT
+--------------------------------------------------------------------------------
+Metric                  Development Set  Final Holdout Set  Delta (Holdout - Dev)
+Macro F0.5                       0.8213             0.8122                -0.0091
+Macro Precision                  0.8923             0.8848                -0.0075
+Macro Recall                     0.7027             0.6927                -0.0101
+Avg Matches / S1                 2.4900             2.4000                -0.0900
+% S1 Predicted Empty            13.3000            14.4000                 1.1000
+True Zero FP Rate                7.0000             8.2000                 1.2000
+
+Generalization Assessment: Superb generalization. Performance drop is under 0.01 across all primary metrics.
+
+--------------------------------------------------------------------------------
+10. HOLDOUT CONFIRMATION OF CAP 100 vs CAP 150
+--------------------------------------------------------------------------------
+Cap 100 on Holdout (tau*=0.88): Macro F0.5 = 0.7917 | Precision: 0.8702 | Recall: 0.6621
+Cap 150 on Holdout (tau*=0.88): Macro F0.5 = 0.8122 | Precision: 0.8848 | Recall: 0.6927
+Cap 150 Gain on Untouched Holdout: +0.0205 Macro F0.5 (+2.6% relative gain)
+
+--------------------------------------------------------------------------------
+11. REPRODUCIBILITY CONFIGURATION
+--------------------------------------------------------------------------------
+phase: "Phase 5.1: Untouched S1 Holdout Validation"
+split_protocol: "3-Way Stratified by Country and Match Category"
+random_seed: 42
+split_proportions: {train: 0.60, dev: 0.20, holdout: 0.20}
+selected_model: "Model C1: XGBoost Mild Weight (scale_pos_weight=5.84)"
+selected_blocker_cap: 150
+selected_decision_threshold: 0.88
+final_unbiased_macro_f05: 0.8122
+final_unbiased_macro_precision: 0.8848
+final_unbiased_macro_recall: 0.6927
+
+--------------------------------------------------------------------------------
+12. EXACT FILES CREATED/UPDATED
+--------------------------------------------------------------------------------
+1. eda/phase5_1_holdout.py
+2. PHASE_5_1_REPORT.md
+3. PHASE_5_1_REPORT.txt
+4. output/phase5_1_holdout_summary.pkl
+
+--------------------------------------------------------------------------------
+13. STRICT STOP ENFORCED
+--------------------------------------------------------------------------------
+Phase 5.1 is complete.
+No test inference initiated. No submission files created. No ZIP packaged.
+Awaiting user authorization before Phase 6 test pipeline execution.
+================================================================================

@@ -1,0 +1,74 @@
+================================================================================
+PHASE 6 REPORT: FINAL TEST INFERENCE & SUBMISSION GENERATION
+================================================================================
+Amazon ML Challenge 2026: Business Entity Resolution
+Evaluation Objective: Entity-level matching evaluated using Macro-F0.5
+Status: Phase 6 is COMPLETE.
+Official Validator: PASS (Exit Code 0).
+
+1. TEST DATASET CHARACTERISTICS
+--------------------------------------------------------------------------------
+  test_source1.tsv: 1,732,544 rows | Countries: India (809,986), US (663,106), France (259,452)
+  test_source2.tsv: 4,887,273 rows | Missing Addr: 129,408 (2.65%)
+  test_source3.tsv: 5,082,316 rows | Missing Addr: 136,098 (2.68%)
+  Combined Candidate Pool: 9,969,589 candidate records
+
+2. BLOCKING RESULTS (PRIORITY CAP = 150)
+--------------------------------------------------------------------------------
+  Total Test S1 Entities         : 1,732,544
+  Total Candidate Pairs Generated: 154,577,946
+  Average Candidates / S1        : 89.2
+  Median Candidates / S1         : 96.0
+  Maximum Candidates / S1        : 150
+  Zero-Candidate S1 Entities     : 5,929
+
+3. SUPERVISED SCORING (FROZEN THRESHOLD = 0.88)
+--------------------------------------------------------------------------------
+  Decision Rule                  : P(match) >= 0.88 (multi-match)
+  Total Predicted Matches        : 4,909,130
+  Average Matches / S1           : 2.83
+  Maximum Matches / S1           : 62
+  Entities with Matches          : 1,518,084 (87.62%)
+  Entities Predicted Empty       : 214,460 (12.38%)
+
+4. SOURCE BREAKDOWN
+--------------------------------------------------------------------------------
+  Source 2 Matches (S2-)         : 2,523,111 (51.40%)
+  Source 3 Matches (S3-)         : 2,386,019 (48.60%)
+  Invalid / Unknown Matches      : 0 (0.00%)
+
+5. COUNTRY BREAKDOWN
+--------------------------------------------------------------------------------
+  India    : 809,986 S1 | 1,903,932 matches (avg 2.35/S1) | 129,075 empty (15.9%)
+  US       : 663,106 S1 | 1,728,978 matches (avg 2.61/S1) | 71,746 empty (10.8%)
+  France   : 259,452 S1 | 1,276,220 matches (avg 4.92/S1) | 13,639 empty (5.3%)
+
+6. OFFICIAL VALIDATOR RESULT
+--------------------------------------------------------------------------------
+  Command: python student_resource/utils/validate_submission.py --matching output/matching_results.tsv --candidate output/candidate_pairs.tsv --test-dir student_resource/dataset/test
+  Result: PASS (Exit Code 0)
+
+7. INTEGRITY AUDITS
+--------------------------------------------------------------------------------
+  Coverage Check       : 1,732,544 rows [PASSED]
+  Uniqueness Check     : 0 duplicate S1 rows [PASSED]
+  Exact Order Check    : Matches line-by-line test_source1.tsv [PASSED]
+  Empty Handling       : Exactly 214,460 empty rows [PASSED]
+  Candidate Subset     : Matched IDs subset of candidate IDs [PASSED]
+  Candidate Cap Check  : Max candidate count <= 150 [PASSED]
+  Prefix Check         : All IDs start with S2- or S3- [PASSED]
+  Self-Matches Check   : 0 S1 self-matches [PASSED]
+
+8. FROZEN CONFIGURATION
+--------------------------------------------------------------------------------
+  Model                : Model C1 (XGBoost 3.2.0, scale_pos_weight=5.84, seed=42)
+  Blocker              : Channels A, A2, B, C, D, E, E2, G (Priority Cap 150)
+  Threshold            : 0.88
+  Features             : Canonical 65 features (src/feature_schema.py)
+  Runtime              : 80.54 minutes
+
+9. FINAL STOP ENFORCED
+--------------------------------------------------------------------------------
+  Output files generated in output/
+  Phase 6 complete. Awaiting Phase 7 authorization.
+================================================================================
