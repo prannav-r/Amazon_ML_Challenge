@@ -1,0 +1,59 @@
+{
+  "baseline_reproduction": {
+    "macro_f05": 0.8512277683766585,
+    "macro_precision": 0.9127433438305183,
+    "macro_recall": 0.7452742787161625,
+    "e2e_recall": 73.74285714285715,
+    "blocker_recall": 81.22857142857143,
+    "classifier_retention": 90.78438269433697,
+    "singleton_f05": 0.6708595387840671,
+    "zero_match_f05": 0.9122807017543859,
+    "multi_match_f05": 0.8580740509958892
+  },
+  "error_counts": {
+    "total_true_matches": 3500,
+    "e2e_true_matches": 2581,
+    "classifier_fns_count": 262,
+    "blocker_misses_count": 657,
+    "false_positives_count": 74,
+    "fn_categories": {
+      "Missing Address": 77,
+      "Shared Address Token": 17,
+      "OCR / Typo": 4,
+      "Aliases / Trade Names": 4,
+      "Address Number Match": 11,
+      "Other / Lexical Shift": 112,
+      "Native Script": 36,
+      "Franchise / Brand": 1
+    },
+    "block_miss_categories": {
+      "Other / Lexical Shift": 242,
+      "Aliases / Trade Names": 36,
+      "Native Script": 203,
+      "Shared Address Token": 31,
+      "Address Number Match": 96,
+      "OCR / Typo": 22,
+      "Missing Address": 19,
+      "Franchise / Brand": 8
+    },
+    "fp_categories": {
+      "Native Script": 10,
+      "Franchise / Brand": 3,
+      "Other / Lexical Shift": 35,
+      "Missing Address": 16,
+      "OCR / Typo": 6,
+      "Address Number Match": 1,
+      "Shared Address Token": 2,
+      "Same Building": 1
+    }
+  },
+  "family_insights": {
+    "missing_address_fn_count": 77,
+    "missing_address_near_thresh": 29,
+    "native_script_block_miss_count": 203,
+    "native_script_fn_count": 36,
+    "lexical_shift_fn_count": 117,
+    "shared_address_fn_count": 28,
+    "shared_address_fp_count": 4
+  }
+}

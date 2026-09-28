@@ -1,0 +1,290 @@
+{
+  "config_d1_spec": {
+    "blocker": "Enhanced Blocking V2 (11 channels, Cap 200)",
+    "feature_count": 76,
+    "model_architecture": "XGBoost C1 (Hist, depth=5, lr=0.08, n_est=300, seed=42)",
+    "decision_threshold": 0.88,
+    "multi_match_rule": "Preserved (all pairs with P >= 0.88 accepted)",
+    "group_k_features": [
+      "feat_same_building_weak_name",
+      "feat_high_addr_low_name_penalty"
+    ]
+  },
+  "full_training_data": {
+    "total_s1_entities": 5000,
+    "total_s2_candidates": 5034616,
+    "total_s3_candidates": 5285603,
+    "total_candidate_pool": 10320219,
+    "training_candidate_pairs": 456432,
+    "positive_pairs": 13042,
+    "negative_pairs": 443390,
+    "scale_pos_weight": 5.830702044904324,
+    "country_distribution": {
+      "US": 3000,
+      "India": 2000
+    },
+    "match_type_distribution": {
+      "multi": 4444,
+      "zero": 291,
+      "single": 265
+    }
+  },
+  "feature_schema": {
+    "total_features": 76,
+    "canonical_features": 65,
+    "selected_phase8_features": 9,
+    "group_k_features": 2,
+    "group_k_names": [
+      "feat_same_building_weak_name",
+      "feat_high_addr_low_name_penalty"
+    ],
+    "duplicates_detected": 0,
+    "rejected_features_detected": 0,
+    "feature_list": [
+      "country_exact_match",
+      "country_missing_either",
+      "name_raw_exact",
+      "name_legal_stripped_exact",
+      "name_domain_stripped_exact",
+      "name_alphanumeric_exact",
+      "name_levenshtein_sim",
+      "name_jaro_winkler_sim",
+      "name_char_3gram_jaccard",
+      "name_length_diff",
+      "name_length_ratio",
+      "name_token_jaccard",
+      "name_token_overlap_coef",
+      "name_token_containment_s1",
+      "name_token_containment_cand",
+      "name_shared_token_count",
+      "name_token_count_diff",
+      "name_first_token_match",
+      "name_last_token_match",
+      "legal_suffix_agreement",
+      "legal_suffix_mismatch",
+      "business_word_overlap_count",
+      "name_both_latin",
+      "name_cross_script",
+      "name_has_non_ascii",
+      "name_missing_either",
+      "address_raw_exact",
+      "address_token_jaccard",
+      "address_token_overlap_coef",
+      "address_shared_token_count",
+      "address_token_containment",
+      "address_token_count_diff",
+      "address_first_token_match",
+      "address_last_token_match",
+      "address_building_num_match",
+      "address_shared_numeric_count",
+      "address_numeric_token_jaccard",
+      "address_has_shared_numeric",
+      "address_postal_exact_match",
+      "address_postal_both_present",
+      "address_postal_mismatch",
+      "address_missing_s1",
+      "address_missing_cand",
+      "exact_name_and_address_number_match",
+      "high_name_sim_and_address_overlap",
+      "shared_name_and_shared_number",
+      "exact_postal_and_strong_name",
+      "cross_script_and_strong_address",
+      "weak_name_and_strong_address",
+      "name_missing_and_strong_address",
+      "candidate_is_source2",
+      "candidate_is_source3",
+      "cand_name_has_url",
+      "cand_name_has_noise_prefix",
+      "fired_chan_a",
+      "fired_chan_a2",
+      "fired_chan_b",
+      "fired_chan_c",
+      "fired_chan_d",
+      "fired_chan_e",
+      "fired_chan_e2",
+      "fired_chan_g",
+      "channels_fired_count",
+      "blocking_priority_score",
+      "blocking_rank_order",
+      "feat_name_token_jaccard_cand_addr_missing",
+      "feat_name_3gram_cand_addr_missing",
+      "feat_name_containment_cand_addr_missing",
+      "feat_name_lev_cand_addr_missing",
+      "feat_name_best_token_similarity",
+      "feat_name_distinctive_jaccard",
+      "feat_name_char_2gram_jaccard",
+      "feat_same_postal_weak_name",
+      "feat_distinctive_name_zero_overlap",
+      "feat_same_building_weak_name",
+      "feat_high_addr_low_name_penalty"
+    ]
+  },
+  "blocking_channels": [
+    {
+      "name": "Channel A",
+      "priority": 100,
+      "key": "Exact normalized core name",
+      "filter": "Legal & domain stripped",
+      "purpose": "High-confidence exact match"
+    },
+    {
+      "name": "Channel A2",
+      "priority": 95,
+      "key": "Prefix-stripped core name",
+      "filter": "Trade prefixes stripped",
+      "purpose": "Trade name and alias recovery"
+    },
+    {
+      "name": "Channel E2",
+      "priority": 85,
+      "key": "Address number + locality anchor",
+      "filter": "DF <= 100",
+      "purpose": "Indic trade aliases & native script"
+    },
+    {
+      "name": "Channel B",
+      "priority": 80,
+      "key": "Rare name tokens",
+      "filter": "DF in [2, 200]",
+      "purpose": "Distinctive single-token matching"
+    },
+    {
+      "name": "Channel E",
+      "priority": 75,
+      "key": "Address number + name prefix-3",
+      "filter": "Length >= 3",
+      "purpose": "Physical location + prefix match"
+    },
+    {
+      "name": "Channel E3",
+      "priority": 70,
+      "key": "Address number + street token",
+      "filter": "DF <= 50, len >= 4",
+      "purpose": "Exact street & building alignment"
+    },
+    {
+      "name": "Channel H",
+      "priority": 65,
+      "key": "Postal code + name prefix-3",
+      "filter": "PIN regex 5-6 digits",
+      "purpose": "Postal area + name alignment"
+    },
+    {
+      "name": "Channel G",
+      "priority": 60,
+      "key": "1-edit typo initial key",
+      "filter": "DF <= 150",
+      "purpose": "OCR / typographical errors"
+    },
+    {
+      "name": "Channel I",
+      "priority": 55,
+      "key": "Distinctive token pairs",
+      "filter": "DF <= 50, len >= 4",
+      "purpose": "Multi-word business descriptors"
+    },
+    {
+      "name": "Channel D",
+      "priority": 50,
+      "key": "Distinctive locality tokens",
+      "filter": "DF <= 150",
+      "purpose": "Locality token alignment"
+    },
+    {
+      "name": "Channel C",
+      "priority": 40,
+      "key": "4-gram prefix + suffix",
+      "filter": "Character 4-grams",
+      "purpose": "Fuzzy fallback for truncated names"
+    }
+  ],
+  "model_params": {
+    "n_estimators": 300,
+    "max_depth": 5,
+    "learning_rate": 0.08,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "gamma": 0.1,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "tree_method": "hist",
+    "scale_pos_weight": 5.83,
+    "random_state": 42,
+    "threshold": 0.88
+  },
+  "output_rules": {
+    "matching_results_header": "source1_entity_id\tmatched_entity_ids",
+    "candidate_pairs_header": "source1_entity_id\tcandidate_entity_ids",
+    "row_cardinality": "Exactly 1 row per test S1 entity",
+    "s1_ordering": "Preserved test S1 order",
+    "empty_handling": "Empty string (tab with empty rest)",
+    "prefixes_permitted": [
+      "S2-",
+      "S3-"
+    ],
+    "self_match_prohibited": true,
+    "candidate_subset_enforced": true
+  },
+  "scale_audit": {
+    "test_s1_estimated": 1732544,
+    "test_s2_estimated": 4890000,
+    "test_s3_estimated": 5080000,
+    "estimated_candidate_pairs": "~150M - 170M",
+    "memory_strategy": "Chunked S1 streaming (50,000 S1 / batch)",
+    "duckdb_threads": 4,
+    "intermediate_cleanup": "Drop temp tables per batch",
+    "peak_ram_estimate": "< 12 GB"
+  },
+  "country_audit": {
+    "countries_supported": [
+      "US",
+      "India",
+      "France",
+      "Open-Set"
+    ],
+    "join_mechanism": "s.country = c.country (generic SQL equality)",
+    "country_hardcoding_detected": false,
+    "french_legal_suffixes_included": true
+  },
+  "compliance": {
+    "external_api_calls": false,
+    "geocoding_used": false,
+    "google_maps_used": false,
+    "external_databases_used": false,
+    "internet_enrichment": false,
+    "model_parameter_count": "< 10,000 parameters (300 trees, depth 5; limit: 8B)",
+    "model_license": "Apache 2.0 (XGBoost)",
+    "dependencies_license": "MIT / Apache 2.0 / BSD",
+    "offline_execution_verified": true
+  },
+  "checklist": {
+    "Config D1 frozen": "PASS",
+    "Full-training procedure works": "PASS",
+    "76 features exactly": "PASS",
+    "Group K features present": "PASS",
+    "Enhanced V2 blocker present": "PASS",
+    "Channel J absent": "PASS",
+    "Candidate cap = 200": "PASS",
+    "XGBoost C1 parameters correct": "PASS",
+    "Threshold = 0.88": "PASS",
+    "Multi-match rule unchanged": "PASS",
+    "Output writer verified": "PASS",
+    "Candidate subset logic verified": "PASS",
+    "Prefix validation verified": "PASS",
+    "Ordering validation verified": "PASS",
+    "Empty handling verified": "PASS",
+    "Validator understood": "PASS",
+    "Memory/chunking strategy documented": "PASS",
+    "Country open-set": "PASS",
+    "No external enrichment": "PASS",
+    "README ready": "PASS",
+    "requirements.txt ready": "PASS",
+    "Documentation_template.md ready": "PASS",
+    "Test inference NOT executed": "PASS",
+    "Official output files untouched": "PASS",
+    "Phase 5.1 holdout untouched": "PASS",
+    "Phase 11 holdout untouched": "PASS",
+    "Phase 13 holdout untouched": "PASS"
+  }
+}

@@ -1,0 +1,1344 @@
+{
+  "summary_table": [
+    {
+      "Configuration": "Config A: Baseline Blocker Cap 150 + 65 feats",
+      "Feats": 65,
+      "Pairs": "92,515",
+      "Opt Thresh": "0.87",
+      "Macro Prec": "0.8918",
+      "Macro Rec": "0.7032",
+      "Macro F0.5": "0.8207",
+      "Delta F0.5": "+0.0000",
+      "Blocker Rec": "76.17%",
+      "E2E Rec": "69.20%",
+      "Single F0.5": "0.6247",
+      "Zero F0.5": "0.9298",
+      "Multi F0.5": "0.8254"
+    },
+    {
+      "Configuration": "Config B: Enhanced V2 Cap 150 + 65 feats",
+      "Feats": 65,
+      "Pairs": "95,682",
+      "Opt Thresh": "0.88",
+      "Macro Prec": "0.9090",
+      "Macro Rec": "0.7316",
+      "Macro F0.5": "0.8431",
+      "Delta F0.5": "+0.0224",
+      "Blocker Rec": "79.63%",
+      "E2E Rec": "72.17%",
+      "Single F0.5": "0.6625",
+      "Zero F0.5": "0.9298",
+      "Multi F0.5": "0.8483"
+    },
+    {
+      "Configuration": "Config C: Enhanced V2 Cap 200 + 65 feats",
+      "Feats": 65,
+      "Pairs": "109,385",
+      "Opt Thresh": "0.88",
+      "Macro Prec": "0.9136",
+      "Macro Rec": "0.7428",
+      "Macro F0.5": "0.8508",
+      "Delta F0.5": "+0.0301",
+      "Blocker Rec": "81.23%",
+      "E2E Rec": "73.31%",
+      "Single F0.5": "0.6813",
+      "Zero F0.5": "0.9298",
+      "Multi F0.5": "0.8559"
+    },
+    {
+      "Configuration": "Config D: Enhanced V2 Cap 150 + 74 feats (selected)",
+      "Feats": 74,
+      "Pairs": "95,682",
+      "Opt Thresh": "0.88",
+      "Macro Prec": "0.9077",
+      "Macro Rec": "0.7339",
+      "Macro F0.5": "0.8430",
+      "Delta F0.5": "+0.0223",
+      "Blocker Rec": "79.63%",
+      "E2E Rec": "72.57%",
+      "Single F0.5": "0.6520",
+      "Zero F0.5": "0.9123",
+      "Multi F0.5": "0.8500"
+    },
+    {
+      "Configuration": "Config E: Enhanced V2 Cap 200 + 74 feats (selected)",
+      "Feats": 74,
+      "Pairs": "109,385",
+      "Opt Thresh": "0.88",
+      "Macro Prec": "0.9127",
+      "Macro Rec": "0.7453",
+      "Macro F0.5": "0.8512",
+      "Delta F0.5": "+0.0305",
+      "Blocker Rec": "81.23%",
+      "E2E Rec": "73.74%",
+      "Single F0.5": "0.6709",
+      "Zero F0.5": "0.9123",
+      "Multi F0.5": "0.8581"
+    },
+    {
+      "Configuration": "Config F: Enhanced V2 Cap 150 + 92 feats (all)",
+      "Feats": 92,
+      "Pairs": "95,682",
+      "Opt Thresh": "0.91",
+      "Macro Prec": "0.9119",
+      "Macro Rec": "0.7235",
+      "Macro F0.5": "0.8431",
+      "Delta F0.5": "+0.0223",
+      "Blocker Rec": "79.63%",
+      "E2E Rec": "71.34%",
+      "Single F0.5": "0.6331",
+      "Zero F0.5": "0.9298",
+      "Multi F0.5": "0.8500"
+    },
+    {
+      "Configuration": "Config G: Enhanced V2 Cap 200 + 92 feats (all)",
+      "Feats": 92,
+      "Pairs": "109,385",
+      "Opt Thresh": "0.91",
+      "Macro Prec": "0.9167",
+      "Macro Rec": "0.7342",
+      "Macro F0.5": "0.8508",
+      "Delta F0.5": "+0.0300",
+      "Blocker Rec": "81.23%",
+      "E2E Rec": "72.43%",
+      "Single F0.5": "0.6520",
+      "Zero F0.5": "0.9298",
+      "Multi F0.5": "0.8576"
+    }
+  ],
+  "best_config": "Config E: Enhanced V2 Cap 200 + 74 feats (selected)",
+  "best_optimal_f05": 0.8512277683766585,
+  "best_optimal_thresh": 0.88,
+  "top30_features": [
+    {
+      "feature": "address_token_overlap_coef",
+      "gain_pct": "27.36%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "address_token_jaccard",
+      "gain_pct": "12.28%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "exact_name_and_address_number_match",
+      "gain_pct": "6.25%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature": "feat_name_token_jaccard_cand_addr_missing",
+      "gain_pct": "5.63%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature": "feat_name_containment_cand_addr_missing",
+      "gain_pct": "4.67%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature": "address_shared_token_count",
+      "gain_pct": "4.57%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "shared_name_and_shared_number",
+      "gain_pct": "4.18%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature": "high_name_sim_and_address_overlap",
+      "gain_pct": "3.40%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature": "feat_name_3gram_cand_addr_missing",
+      "gain_pct": "3.34%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature": "address_numeric_token_jaccard",
+      "gain_pct": "2.42%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "feat_name_char_2gram_jaccard",
+      "gain_pct": "2.25%",
+      "group": "Group I: OCR & Typo Robustness"
+    },
+    {
+      "feature": "cross_script_and_strong_address",
+      "gain_pct": "2.00%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature": "name_char_3gram_jaccard",
+      "gain_pct": "1.80%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "name_token_containment_cand",
+      "gain_pct": "1.76%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "address_token_containment",
+      "gain_pct": "1.73%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "name_both_latin",
+      "gain_pct": "1.12%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "address_building_num_match",
+      "gain_pct": "1.04%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "blocking_rank_order",
+      "gain_pct": "0.70%",
+      "group": "Group F: Blocking Provenance"
+    },
+    {
+      "feature": "name_jaro_winkler_sim",
+      "gain_pct": "0.67%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "feat_name_best_token_similarity",
+      "gain_pct": "0.67%",
+      "group": "Group H: Alias & Trade Names"
+    },
+    {
+      "feature": "address_has_shared_numeric",
+      "gain_pct": "0.62%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "feat_name_lev_cand_addr_missing",
+      "gain_pct": "0.60%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature": "fired_chan_b",
+      "gain_pct": "0.55%",
+      "group": "Group F: Blocking Provenance"
+    },
+    {
+      "feature": "name_cross_script",
+      "gain_pct": "0.54%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "address_first_token_match",
+      "gain_pct": "0.50%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "name_token_jaccard",
+      "gain_pct": "0.48%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "legal_suffix_mismatch",
+      "gain_pct": "0.46%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "fired_chan_a2",
+      "gain_pct": "0.45%",
+      "group": "Group F: Blocking Provenance"
+    },
+    {
+      "feature": "feat_name_distinctive_jaccard",
+      "gain_pct": "0.42%",
+      "group": "Group H: Alias & Trade Names"
+    },
+    {
+      "feature": "name_last_token_match",
+      "gain_pct": "0.41%",
+      "group": "Group B: Name Similarities"
+    }
+  ],
+  "group_gain": [
+    {
+      "group": "Group C: Address Similarities",
+      "gain_pct": "52.03%"
+    },
+    {
+      "group": "Group D: Cross-Field Interactions",
+      "gain_pct": "15.91%"
+    },
+    {
+      "group": "Group G: Missing-Address Recovery",
+      "gain_pct": "14.24%"
+    },
+    {
+      "group": "Group B: Name Similarities",
+      "gain_pct": "10.23%"
+    },
+    {
+      "group": "Group F: Blocking Provenance",
+      "gain_pct": "3.12%"
+    },
+    {
+      "group": "Group I: OCR & Typo Robustness",
+      "gain_pct": "2.25%"
+    },
+    {
+      "group": "Group H: Alias & Trade Names",
+      "gain_pct": "1.09%"
+    },
+    {
+      "group": "Group E: Source-Specific Signals",
+      "gain_pct": "1.07%"
+    },
+    {
+      "group": "Group K: Address Disambiguation (FPs)",
+      "gain_pct": "0.07%"
+    },
+    {
+      "group": "Group A: Country Invariants",
+      "gain_pct": "0.00%"
+    }
+  ],
+  "error_analysis": {
+    "fp_categories": {
+      "OCR/typo": 3,
+      "other": 16,
+      "native script": 5,
+      "address-number match": 1,
+      "same building": 1,
+      "franchise/brand": 3,
+      "missing address": 1
+    },
+    "fn_categories": {
+      "missing address": 7,
+      "other": 12,
+      "native script": 6,
+      "aliases": 3,
+      "OCR/typo": 1,
+      "address-number match": 1
+    },
+    "newly_rec_categories": {
+      "other": 17,
+      "native script": 3
+    },
+    "new_chan_categories": {
+      "other": 17,
+      "native script": 3
+    },
+    "total_newly_recovered": 182,
+    "total_new_channel_matches": 158,
+    "fp_from_new_channels_count": 5,
+    "fp_sample": [
+      {
+        "s1_id": "S1-474409913",
+        "cand_id": "S3-135351570",
+        "score": 0.9969,
+        "category": "OCR/typo",
+        "s1_name": "Frye & Santana Inc.",
+        "cand_name": "Frye  & Santana Inc",
+        "s1_addr": "108 Tower Street, Paola, KS",
+        "cand_addr": "119 Tower Street, Paola, Kansas"
+      },
+      {
+        "s1_id": "S1-545582895",
+        "cand_id": "S3-646524505",
+        "score": 0.996,
+        "category": "other",
+        "s1_name": "Global Techzone Foundation Limited",
+        "cand_name": "Global Global Techzone Foundation L.L.P.",
+        "s1_addr": "Plot No. 1, Gut No. 27, Bankarwadi Ranjangaon, Midc, Waluj, Aurangabad, Maharashtra",
+        "cand_addr": "Plot No. 4, Gut No. 27, Bankarwadi Ranjangaon, Midc, Waluj, Aurangabad, MH"
+      },
+      {
+        "s1_id": "S1-486348428",
+        "cand_id": "S2-941946470",
+        "score": 0.9957,
+        "category": "other",
+        "s1_name": "Millennium (India) Konkan Private Limited",
+        "cand_name": "MILLENNIUM (INDIA) KONKAN L.L.P.",
+        "s1_addr": "No. 155/1D2, Chandrapalayam, Gst Road, Madurai South, Madurai, Tamil Nadu",
+        "cand_addr": "DOOR NO 155/1D15  , CHANDRAPALAYAM, GST ROAD, MADURAI SOUTH, \u0ba4\u0bae\u0bbf\u0bb4\u0bcd\u0ba8\u0bbe\u0b9f\u0bc1"
+      },
+      {
+        "s1_id": "S1-875691993",
+        "cand_id": "S2-930645881",
+        "score": 0.9954,
+        "category": "other",
+        "s1_name": "Unitech (India) Services",
+        "cand_name": "Unitech (India) Services L.L.P.",
+        "s1_addr": "D 129 Ndmc Society H-3 Blockvikas Puri, New Delhi, West Delhi, Delhi",
+        "cand_addr": "D 0129 NDMC SOCIETY H-14 BLOCKVIKAS PURI, NEW DELHI, \u0926\u093f\u0932\u094d\u0932\u0940"
+      },
+      {
+        "s1_id": "S1-552658307",
+        "cand_id": "S3-858082858",
+        "score": 0.994,
+        "category": "native script",
+        "s1_name": "Yamuora Agro Pvt. Ltd.",
+        "cand_name": "Yamuoraer \u00e1gro Pvt. Ltd.",
+        "s1_addr": "Gr Fl-Fr, Fl-13/ Higu, 13/2 Biren Roy Road(West), Kolkata, Kolkata, Howrah, West Bengal",
+        "cand_addr": "Gr Flsfr, Fl-13/ Higu, 13/2 Biren Roy Road(west), Kolkata, Calcutta, Howrah, WB"
+      },
+      {
+        "s1_id": "S1-532602797",
+        "cand_id": "S3-635743988",
+        "score": 0.9932,
+        "category": "other",
+        "s1_name": "Cupid View Limited",
+        "cand_name": "Limited Cupid Enterprises",
+        "s1_addr": "Sethiyachambers 116/2 1St, Floor Venkatasamy Road, Coimbatore South, Coimbatore, Tamil Nadu",
+        "cand_addr": "Sethiyachambers D/116/2 3St, Floor Venkatasamy Road, Coimbatore South, Coimbotore, \u0ba4\u0bae\u0bbf\u0bb4\u0bcd\u0ba8\u0bbe\u0b9f\u0bc1"
+      },
+      {
+        "s1_id": "S1-515803087",
+        "cand_id": "S2-810893772",
+        "score": 0.9911,
+        "category": "other",
+        "s1_name": "Salisbury Bioworks LLC",
+        "cand_name": "Llc Culver Bioworks",
+        "s1_addr": "3105 Flemming Road, Middletown, OH",
+        "cand_addr": "3105 FLEMMING ROAD, MIDDLETOWN, OH"
+      },
+      {
+        "s1_id": "S1-842881175",
+        "cand_id": "S2-344500042",
+        "score": 0.9906,
+        "category": "address-number match",
+        "s1_name": "Mandie Cannon, DO",
+        "cand_name": "CANNRON,, MANDIE EDO",
+        "s1_addr": "3315 Nelson Road, Town Of Algoma, WI",
+        "cand_addr": "3315 NALSON ROAD, TOWN OF ALGOMA, WI"
+      },
+      {
+        "s1_id": "S1-281051556",
+        "cand_id": "S3-236625517",
+        "score": 0.99,
+        "category": "other",
+        "s1_name": "Stella Vail House Inc",
+        "cand_name": "lucero vail house inc",
+        "s1_addr": "3620 Old Sand Mine Drive, Wilmington, NC",
+        "cand_addr": "3620 Old Sand Mine Dr, Wilmington, North Carolina"
+      },
+      {
+        "s1_id": "S1-804287238",
+        "cand_id": "S3-336937148",
+        "score": 0.9899,
+        "category": "same building",
+        "s1_name": "Ivenent Cherry",
+        "cand_name": "Ivvenent Chmyer",
+        "s1_addr": "5384 Oconnell Street, Canal Winchester, OH",
+        "cand_addr": "5384 Oconnell Saint, Canal Winchester, Ohio"
+      },
+      {
+        "s1_id": "S1-833989637",
+        "cand_id": "S2-650241776",
+        "score": 0.9884,
+        "category": "other",
+        "s1_name": "Signature Certified Living PC",
+        "cand_name": "CO SIGNATURE CERTIFIED LIVING",
+        "s1_addr": "MA, 69 Allyn Lane, Barnstable",
+        "cand_addr": "#71 ALLYN LANE, BARNSTABLE TOWNSHIP, MA"
+      },
+      {
+        "s1_id": "S1-148758725",
+        "cand_id": "S3-191148511",
+        "score": 0.985,
+        "category": "other",
+        "s1_name": "Iconic Mist Limited",
+        "cand_name": "Iconic Mist L.L.P.",
+        "s1_addr": "Kanpur, 94/42-A, Sanjay Gandhi Nagar Naubasta, Kanpur, Uttar Pradesh",
+        "cand_addr": "94/43-A, Sanjay Gandhi Nagar Naubasta, Kanpur, UP"
+      },
+      {
+        "s1_id": "S1-861378966",
+        "cand_id": "S2-771853446",
+        "score": 0.9837,
+        "category": "OCR/typo",
+        "s1_name": "Matrix Sangh",
+        "cand_name": "Matrix  Sangh",
+        "s1_addr": "House No. A-408A New Ashok Nagar, New Delhi, Delhi",
+        "cand_addr": "3143/45, GALI-33, GROUND FLOOR, BEADONPURA, NEW DELHI, \u0926\u093f\u0932\u094d\u0932\u0940"
+      },
+      {
+        "s1_id": "S1-368348061",
+        "cand_id": "S3-478203783",
+        "score": 0.9834,
+        "category": "other",
+        "s1_name": "Naon Enterprises Inc",
+        "cand_name": "Naon Enterprises L.L.C.",
+        "s1_addr": "31481 Oak Ridge Drive, Muscoda, WI",
+        "cand_addr": "71486 Oak Ridge Dr, Muscoda, Wisconsin"
+      },
+      {
+        "s1_id": "S1-290019824",
+        "cand_id": "S2-877119640",
+        "score": 0.9815,
+        "category": "OCR/typo",
+        "s1_name": "JFA Network Pvt Ltd",
+        "cand_name": "JHFA NETWORK  PVT LTD",
+        "s1_addr": "At-Banspal, Po-Banspal Ps-Nayakote, Keonjhar, Kendujhar, Orissa",
+        "cand_addr": "H.NO 65 AT-BANSPAL, PO-BANSPAL PS-NAYAKOTE, KEONJHAR, Orissa"
+      },
+      {
+        "s1_id": "S1-743364627",
+        "cand_id": "S3-407840757",
+        "score": 0.9812,
+        "category": "other",
+        "s1_name": "Kolkata Education Private Limited",
+        "cand_name": "Private Kolkata Education Limited",
+        "s1_addr": "6/A/6 B T Road, Kolkata, Howrah, West Bengal",
+        "cand_addr": "2C, Shivangan, 53/1/2, Hazra Road, Kolkata, Kolkata, Howrah, WB"
+      },
+      {
+        "s1_id": "S1-743364627",
+        "cand_id": "S3-527113604",
+        "score": 0.9812,
+        "category": "other",
+        "s1_name": "Kolkata Education Private Limited",
+        "cand_name": "Private Kolkata Education Limited",
+        "s1_addr": "6/A/6 B T Road, Kolkata, Howrah, West Bengal",
+        "cand_addr": "Shivangan, 53/1/2, Hazra Road, Kolkata, Howrah, 2C, WB, Kolkata"
+      },
+      {
+        "s1_id": "S1-597762257",
+        "cand_id": "S3-310769248",
+        "score": 0.9792,
+        "category": "franchise/brand",
+        "s1_name": "Green Logistics Private Limited",
+        "cand_name": "Green Logistics Private Limited",
+        "s1_addr": "E-7, Second Floor, New Delhi, South Delhi, Delhi",
+        "cand_addr": "H. No. - 39, F/f Road No. - 57 Punjabi Bagh, West Delhi, New Delhi, \u0926\u093f\u0932\u094d\u0932\u0940"
+      },
+      {
+        "s1_id": "S1-682041645",
+        "cand_id": "S2-17887490",
+        "score": 0.9757,
+        "category": "franchise/brand",
+        "s1_name": "Pune Builders Public Limited",
+        "cand_name": "Pune Builders Public Limited",
+        "s1_addr": "Pune, Maharashtra, S.No.10/2B, Pune, Sapkal Wasti",
+        "cand_addr": "AMEYA GULMOHR PATH 72/24 ERANDAVANA, PUNE, Maharashtra"
+      },
+      {
+        "s1_id": "S1-743364627",
+        "cand_id": "S3-158607424",
+        "score": 0.9752,
+        "category": "native script",
+        "s1_name": "Kolkata Education Private Limited",
+        "cand_name": "Kolkata \u00ednsulation Private Limited",
+        "s1_addr": "6/A/6 B T Road, Kolkata, Howrah, West Bengal",
+        "cand_addr": "5, Kolkata, Howrah, WB"
+      },
+      {
+        "s1_id": "S1-743364627",
+        "cand_id": "S3-719091535",
+        "score": 0.9751,
+        "category": "other",
+        "s1_name": "Kolkata Education Private Limited",
+        "cand_name": "KOLKATA EDUCATION EDUCATION PRIVATE LIMITED",
+        "s1_addr": "6/A/6 B T Road, Kolkata, Howrah, West Bengal",
+        "cand_addr": "#994 14/11, Kolkata, Howrah, WB"
+      },
+      {
+        "s1_id": "S1-684772333",
+        "cand_id": "S2-322614298",
+        "score": 0.9745,
+        "category": "native script",
+        "s1_name": "Vijay Consultancy Private Limited",
+        "cand_name": "\u092b\u0930\u094d\u0938\u094d\u091f \u0915\u0902\u0938\u0932\u094d\u091f\u0947\u0902\u0938\u0940 \u092a\u094d\u0930\u093e\u0907\u0935\u0947\u091f \u0932\u093f\u092e\u093f\u091f\u0947\u0921",
+        "s1_addr": "Plot No. 813/1, Vikas Cinemall, Situated At G.T. Road, Naveen, Shahdara, Delhi",
+        "cand_addr": "PLOT NO. 813/1, JALANDHAR, Delhi, SHAHDARA, VIKAS CINEMALL, SITUATED AT G.T. ROAD, NAVEEN SHAHDARA, DELHI"
+      },
+      {
+        "s1_id": "S1-684772333",
+        "cand_id": "S2-331507090",
+        "score": 0.9745,
+        "category": "native script",
+        "s1_name": "Vijay Consultancy Private Limited",
+        "cand_name": "\u092b\u0930\u094d\u0938\u094d\u091f \u0915\u0902\u0938\u0932\u094d\u091f\u0947\u0902\u0938\u0940 \u092a\u094d\u0930\u093e\u0907\u0935\u0947\u091f \u0932\u093f\u092e\u093f\u091f\u0947\u0921",
+        "s1_addr": "Plot No. 813/1, Vikas Cinemall, Situated At G.T. Road, Naveen, Shahdara, Delhi",
+        "cand_addr": "PLOT NO. 813/1, VIKAS CINEMALL, SITUATED AT G.T. ROAD, NAVEEN SHAHDARA, DELHI, JALANDHAR, SHAHDARA, Delhi"
+      },
+      {
+        "s1_id": "S1-684772333",
+        "cand_id": "S2-561639840",
+        "score": 0.9733,
+        "category": "native script",
+        "s1_name": "Vijay Consultancy Private Limited",
+        "cand_name": "\u092b\u0930\u094d\u0938\u094d\u091f \u0915\u0902\u0938\u0932\u094d\u091f\u0947\u0902\u0938\u0940 \u092a\u094d\u0930\u093e\u0907\u0935\u0947\u091f \u0932\u093f\u092e\u093f\u091f\u0947\u0921",
+        "s1_addr": "Plot No. 813/1, Vikas Cinemall, Situated At G.T. Road, Naveen, Shahdara, Delhi",
+        "cand_addr": "PLOT NO. 813/1, VIKAS CINEMALL, SITUATED AT G.T. ROAD, NAVEEN SHAHDARA, DELHI, JALANDHAR, SHAHDARA, Delhi"
+      },
+      {
+        "s1_id": "S1-780893579",
+        "cand_id": "S3-362174727",
+        "score": 0.972,
+        "category": "other",
+        "s1_name": "Godbole City Corp",
+        "cand_name": "Godbole City Industries",
+        "s1_addr": "Building No. 61/245- B2, Zeia Arcade, Church Landing Road, Pallimukku, Kochi, Ernakulam, Kerala",
+        "cand_addr": "Builidng No. 61/245- B3, Zeia Arcade, Church Landing Road, Pallimukku, Ernakulam, Kochi, KL"
+      },
+      {
+        "s1_id": "S1-471376742",
+        "cand_id": "S3-240464575",
+        "score": 0.9693,
+        "category": "missing address",
+        "s1_name": "Secure Engineering Innovations LLC",
+        "cand_name": "Secure Engineering Innovations  L.L.C.",
+        "s1_addr": "Tiffin, 35 St Clair Street, OH",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-597762257",
+        "cand_id": "S3-835774035",
+        "score": 0.9681,
+        "category": "other",
+        "s1_name": "Green Logistics Private Limited",
+        "cand_name": "Greenlogistics.Com",
+        "s1_addr": "E-7, Second Floor, New Delhi, South Delhi, Delhi",
+        "cand_addr": "Flat No-64-d Pkt A Mayur Vihar, Delhi, New Delhi, DL"
+      },
+      {
+        "s1_id": "S1-685028795",
+        "cand_id": "S2-215154169",
+        "score": 0.9645,
+        "category": "other",
+        "s1_name": "HCC Capital Private Limited",
+        "cand_name": "HPCC Capital Capital Private",
+        "s1_addr": "Pethkar Projects Siyona, B2/702Sno47(P)48(P)50(P)7, Pune City, Pune, Maharashtra",
+        "cand_addr": "NO 57 PETHKAR PROJECTS SIYONA, B2/702SNO47(P)48(P)50(P)7, PUNE CITY, \u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"
+      },
+      {
+        "s1_id": "S1-743364627",
+        "cand_id": "S3-268952228",
+        "score": 0.964,
+        "category": "other",
+        "s1_name": "Kolkata Education Private Limited",
+        "cand_name": "kolkata foundation private limited",
+        "s1_addr": "6/A/6 B T Road, Kolkata, Howrah, West Bengal",
+        "cand_addr": "Block Jt, Kolkata, Howrah, WB"
+      },
+      {
+        "s1_id": "S1-196317991",
+        "cand_id": "S2-123686999",
+        "score": 0.9634,
+        "category": "franchise/brand",
+        "s1_name": "Jones Delta Estate LLC",
+        "cand_name": "Jones Delta Estate Llc",
+        "s1_addr": "Chicago, 5641 Kimbark Avenue, IL",
+        "cand_addr": "4350 WLCOTT AVE, CHICAGO, IL"
+      }
+    ],
+    "fn_sample": [
+      {
+        "s1_id": "S1-368348061",
+        "cand_id": "S3-656890408",
+        "score": 0.0,
+        "category": "missing address",
+        "s1_name": "Naon Enterprises Inc",
+        "cand_name": "Naon \u00cdnc Partners",
+        "s1_addr": "31481 Oak Ridge Drive, Muscoda, WI",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-242195439",
+        "cand_id": "S3-699914104",
+        "score": 0.0021,
+        "category": "missing address",
+        "s1_name": "Dream Infra Limited",
+        "cand_name": "Mr Dream Infra Ltd",
+        "s1_addr": "Gat No.71/22, Turkheda Near Mamurabad, Jalgaon, Jalgaon, Maharashtra",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-109339365",
+        "cand_id": "S2-932452250",
+        "score": 0.0027,
+        "category": "other",
+        "s1_name": "Cristal (India) Exim",
+        "cand_name": "Cristal (India)",
+        "s1_addr": "11B Dr Rajendra Road, Kolkata, Calcutta, West Bengal",
+        "cand_addr": "DOOR NO 0011B DR RAJENDRA ROAD, KOKLATA, \u09aa\u09b6\u09cd\u099a\u09bf\u09ae\u09ac\u0999\u09cd\u0997"
+      },
+      {
+        "s1_id": "S1-756304715",
+        "cand_id": "S3-919158992",
+        "score": 0.0035,
+        "category": "other",
+        "s1_name": "Choice Rate",
+        "cand_name": "Wexdova",
+        "s1_addr": "2333 Sierra Madre Court, Rancho Cordova, CA",
+        "cand_addr": "233 Sierra Madre Ct, PMB 1086, Rancho Cordova CITY, California"
+      },
+      {
+        "s1_id": "S1-354336647",
+        "cand_id": "S2-665838512",
+        "score": 0.0048,
+        "category": "native script",
+        "s1_name": "Green Solutions LLP",
+        "cand_name": "\u0a97\u0acd\u0ab0\u0ac0\u0aa8 \u0ab8\u0acb\u0ab2\u0acd\u0aaf\u0ac1\u0ab6\u0aa8\u0acd\u0ab8 \u0a8f\u0ab2\u0a8f\u0ab2\u0aaa\u0ac0",
+        "s1_addr": "C2Hiramanek Soc Nr Sharda, Petrol Pump Chandkheda, Ahmedabad, Gujarat",
+        "cand_addr": "DOOR NO 347 C2HIRAMANEK SOC NR SHARDA, AHMEDABAD, Gujarat"
+      },
+      {
+        "s1_id": "S1-118929976",
+        "cand_id": "S2-832756554",
+        "score": 0.0052,
+        "category": "missing address",
+        "s1_name": "Anand Business Limited",
+        "cand_name": "Anand Business Enterprises",
+        "s1_addr": "Saha Bhawan, First Floor 8, Circus Market Place, Kolkata, Howrah, West Bengal",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-128671327",
+        "cand_id": "S3-185309228",
+        "score": 0.0063,
+        "category": "native script",
+        "s1_name": "Krishna Good Hospitality Limited",
+        "cand_name": "\u0a95\u0acd\u0ab0\u0abf\u0ab7\u0acd\u0aa8\u0abe \u0a97\u0ac1\u0aa1 \u0ab9\u0acb\u0ab8\u0acd\u0aaa\u0abf\u0a9f\u0abe\u0ab2\u0abf\u0a9f\u0ac0 \u0ab2\u0abf\u0aae\u0abf\u0a9f\u0ac7\u0aa1",
+        "s1_addr": "Vaghroda Road Vaghroda Village Vaghroda, Gujarat, Mahesana, Kadi",
+        "cand_addr": "Hn 477 Vaghroda Road Vaghroda Vlilage Vaghroda, Mahesana, Visnagar, GJ"
+      },
+      {
+        "s1_id": "S1-128671327",
+        "cand_id": "S3-530723381",
+        "score": 0.0069,
+        "category": "native script",
+        "s1_name": "Krishna Good Hospitality Limited",
+        "cand_name": "\u0a95\u0ac3\u0ab7\u0acd\u0aa3 \u0a97\u0ac1\u0aa1 \u0ab9\u0acb\u0ab8\u0acd\u0aaa\u0abf\u0a9f\u0abe\u0ab2\u0abf\u0a9f\u0ac0 \u0ab2\u0abf\u0aae\u0abf\u0a9f\u0ac7\u0aa1",
+        "s1_addr": "Vaghroda Road Vaghroda Village Vaghroda, Gujarat, Mahesana, Kadi",
+        "cand_addr": "Hn 477 Vaghroda Road Vaghroda Village Vaghroda, Kadi, Visnagar, GJ"
+      },
+      {
+        "s1_id": "S1-128671327",
+        "cand_id": "S3-531725962",
+        "score": 0.0069,
+        "category": "native script",
+        "s1_name": "Krishna Good Hospitality Limited",
+        "cand_name": "\u0a95\u0ac3\u0ab7\u0acd\u0aa3 \u0a97\u0ac1\u0aa1 \u0ab9\u0acb\u0ab8\u0acd\u0aaa\u0abf\u0a9f\u0abe\u0ab2\u0abf\u0a9f\u0ac0 \u0ab2\u0abf\u0aae\u0abf\u0a9f\u0ac7\u0aa1",
+        "s1_addr": "Vaghroda Road Vaghroda Village Vaghroda, Gujarat, Mahesana, Kadi",
+        "cand_addr": "Hn 477 Vaghroda Road Vaghroda Village Vaghroda, Mahesana, Visnagar, GJ"
+      },
+      {
+        "s1_id": "S1-441821984",
+        "cand_id": "S3-890496189",
+        "score": 0.0158,
+        "category": "other",
+        "s1_name": "Balaji Finance Pvt Ltd",
+        "cand_name": "Balaji Finance Ltd Pvt (ID: 85000)",
+        "s1_addr": "East Delhi, B-32, Delhi, U/G/F/B/S Office No.1, 1St Floor, Subhash Chowk, Near Hira Sweets, Vikas Marg, Lax, Mi Nagar, New Delhi",
+        "cand_addr": "#D/176 B-32, DL, East Delhi, Preet Vihar"
+      },
+      {
+        "s1_id": "S1-552658307",
+        "cand_id": "S3-660932884",
+        "score": 0.0179,
+        "category": "other",
+        "s1_name": "Yamuora Agro Pvt. Ltd.",
+        "cand_name": "yamuoraagro.com",
+        "s1_addr": "Gr Fl-Fr, Fl-13/ Higu, 13/2 Biren Roy Road(West), Kolkata, Kolkata, Howrah, West Bengal",
+        "cand_addr": "Gr Fl-fr, Calcutta, Howrah, \u09aa\u09b6\u09cd\u099a\u09bf\u09ae\u09ac\u0999\u09cd\u0997"
+      },
+      {
+        "s1_id": "S1-872302647",
+        "cand_id": "S3-983622567",
+        "score": 0.0209,
+        "category": "missing address",
+        "s1_name": "Lucky Pilates Inc",
+        "cand_name": "Lucky Pilates",
+        "s1_addr": "321 21st Street, Unit C, Newark, OH",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-622374625",
+        "cand_id": "S3-446634745",
+        "score": 0.024,
+        "category": "missing address",
+        "s1_name": "Om Estate Private Limited",
+        "cand_name": "Om Estate Private",
+        "s1_addr": "Gujara Mala, Pune, Maharashtra, Ap Shirur, Tal Shirur, Pune",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-447103941",
+        "cand_id": "S3-556786353",
+        "score": 0.0307,
+        "category": "aliases",
+        "s1_name": "Bell Flexipack Private Limited",
+        "cand_name": "Shri Be1l-Flexipack",
+        "s1_addr": "Ground Floor, Pitru Chhaya Bldg, 6 Sleater Road, First Cross Lane, Grant Road, Mumbai, Mumbai City, Maharashtra",
+        "cand_addr": "Mumbai City, Mumbai, Ground Floor, \u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"
+      },
+      {
+        "s1_id": "S1-743171772",
+        "cand_id": "S2-550708294",
+        "score": 0.031,
+        "category": "other",
+        "s1_name": "Ear Nose & Throat Group of Oberlin",
+        "cand_name": "Ear Throat Throat and Nose Group of Oberlin",
+        "s1_addr": "94 Oberlin Road, Oberlin, OH",
+        "cand_addr": "94B Oberlin Rd, OBERLIN, OH"
+      },
+      {
+        "s1_id": "S1-53041046",
+        "cand_id": "S3-674116550",
+        "score": 0.0323,
+        "category": "native script",
+        "s1_name": "Guru Care LLP",
+        "cand_name": "\u0917\u0941\u0930\u0941 \u0915\u0947\u092f\u0930 \u090f\u0932\u090f\u0932\u092a\u0940",
+        "s1_addr": "Gali No. 3, Behind City, Mall, Vijay Nagar, Gokalgarh, Rewari, Haryana",
+        "cand_addr": "Rewari, HR, Gokalgarh, Gali No. 003"
+      },
+      {
+        "s1_id": "S1-580992307",
+        "cand_id": "S3-62710162",
+        "score": 0.0381,
+        "category": "other",
+        "s1_name": "Creative Baba It Private Limited",
+        "cand_name": "Private Creative Baba It Limited",
+        "s1_addr": "D220, S/Floor Defence Colony, New Delhi, South Delhi, Delhi",
+        "cand_addr": "D20, Dadri, Distt G. B. Nagar, South Delhi, DL"
+      },
+      {
+        "s1_id": "S1-990996106",
+        "cand_id": "S2-795168501",
+        "score": 0.0438,
+        "category": "OCR/typo",
+        "s1_name": "Zsa Zsa Beaulieu Future",
+        "cand_name": "Zsa Zsa Beaulieu  Future",
+        "s1_addr": "MN, 23108 127th Street, Glenwood",
+        "cand_addr": "127ST ST, GLENWODO, MN"
+      },
+      {
+        "s1_id": "S1-896142542",
+        "cand_id": "S2-854806894",
+        "score": 0.0522,
+        "category": "missing address",
+        "s1_name": "Laxmi Services",
+        "cand_name": "Laxmi Services Enterprises",
+        "s1_addr": "Plot No. 16 & 17, 2Nd Floor, Dwarka Sector 11, New Delhi, New Delhi, South West Delhi, Delhi",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-588069177",
+        "cand_id": "S2-655710420",
+        "score": 0.0523,
+        "category": "missing address",
+        "s1_name": "Mountain Association Inc",
+        "cand_name": "Mountain Association Incorporated",
+        "s1_addr": "1101 1/2 Navasota Street, Austin, TX",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-659932965",
+        "cand_id": "S3-340507988",
+        "score": 0.0535,
+        "category": "other",
+        "s1_name": "Flint Group",
+        "cand_name": "Ariacalo",
+        "s1_addr": "11 Wyngate, Simsbury, CT",
+        "cand_addr": "Wyngate, Simsbury, Connecticut"
+      },
+      {
+        "s1_id": "S1-983237906",
+        "cand_id": "S2-517345123",
+        "score": 0.0596,
+        "category": "address-number match",
+        "s1_name": "K 8 Certified Living",
+        "cand_name": "Fluxzeph",
+        "s1_addr": "26284 29, Heath, AL",
+        "cand_addr": "26284 29, ANDALUSIA, AL"
+      },
+      {
+        "s1_id": "S1-173339872",
+        "cand_id": "S3-48514074",
+        "score": 0.0602,
+        "category": "aliases",
+        "s1_name": "Classic Minerals",
+        "cand_name": "Brixnylavera",
+        "s1_addr": "17640 Maverick Drive, Natrona, WY",
+        "cand_addr": "17640 Maverick Dr, Casper, Wyoming"
+      },
+      {
+        "s1_id": "S1-881273353",
+        "cand_id": "S2-989433039",
+        "score": 0.0618,
+        "category": "other",
+        "s1_name": "Davila's Maintenance",
+        "cand_name": "HALOSOLZEPH",
+        "s1_addr": "3796 Tottys Bend Road, Duck River, TN",
+        "cand_addr": "379 TOTTYS BEND ROAD, DUCK RIVER, TN"
+      },
+      {
+        "s1_id": "S1-432478198",
+        "cand_id": "S3-472007969",
+        "score": 0.0716,
+        "category": "other",
+        "s1_name": "Olaneus Apollo",
+        "cand_name": "0laneus olaneus apollo",
+        "s1_addr": "2500 Blanco Boulevard, Bloomfield, NM",
+        "cand_addr": "Blanco Blvd, Bloomfield, New Mexico"
+      },
+      {
+        "s1_id": "S1-783271110",
+        "cand_id": "S3-616367901",
+        "score": 0.0723,
+        "category": "native script",
+        "s1_name": "Coastal Elite Churchill LLC",
+        "cand_name": "Coastal Elite Ch\u00farchill LLC",
+        "s1_addr": "835 Game Trail, Unit APARTMENT 201, Lakemoor, IL",
+        "cand_addr": "Game Trl, Mchenry, Illinois"
+      },
+      {
+        "s1_id": "S1-812553864",
+        "cand_id": "S2-57704956",
+        "score": 0.0769,
+        "category": "other",
+        "s1_name": "Goldstar Clinic",
+        "cand_name": "Dr Go1dstar Partners",
+        "s1_addr": "Sh No 1 Grn Flr, Tere Gaali Versova, Mumbai, Maharashtra",
+        "cand_addr": "NO. 189 SH NO 1 GRN FLR, TERE GAALI VERSOVA, BOMBAY, MUMBAI, Maharashtra"
+      },
+      {
+        "s1_id": "S1-644444933",
+        "cand_id": "S2-117867291",
+        "score": 0.0775,
+        "category": "other",
+        "s1_name": "Genevra Langston Holdings",
+        "cand_name": "Genevra Langston LLC",
+        "s1_addr": "14-40 162 Street, Whitestone, NY",
+        "cand_addr": "162 STREET, WHITESTONE, NY"
+      },
+      {
+        "s1_id": "S1-980395056",
+        "cand_id": "S3-499530510",
+        "score": 0.0791,
+        "category": "aliases",
+        "s1_name": "Maid Tavern!",
+        "cand_name": "Maid Tavhtnr!",
+        "s1_addr": "1596 Eloisa Lane, Thatcher, AZ",
+        "cand_addr": "01597 Eloisa Lane, Thacther, Arizona"
+      },
+      {
+        "s1_id": "S1-535936959",
+        "cand_id": "S3-243767230",
+        "score": 0.087,
+        "category": "other",
+        "s1_name": "OQR Plast Ltd",
+        "cand_name": "oqrplast.com",
+        "s1_addr": "104, Haryana, Sai Complex Gali No. 4, Tigaon Road, Omaxe Heights Old Gate, Faridabad",
+        "cand_addr": "102, Faridabad, HR"
+      }
+    ],
+    "newly_recovered_sample": [
+      {
+        "s1_id": "S1-314045617",
+        "cand_id": "S3-359536205",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Williams Premier Xrp",
+        "cand_name": "Williams Xrp Premier",
+        "s1_addr": "845 Mildred Avenue, Dundalk, MD",
+        "cand_addr": "845 Mildred Avenue, <NULL>, Dundalk, Maryland"
+      },
+      {
+        "s1_id": "S1-421315715",
+        "cand_id": "S2-834091361",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Patriot Reliable Waste",
+        "cand_name": "Waste Patriot Reliable",
+        "s1_addr": "3321 Dayton-springfield Road, Springfield, OH",
+        "cand_addr": "3321 Dayton-springfield Rd, null, SPRINGFFIELD, OH"
+      },
+      {
+        "s1_id": "S1-93053516",
+        "cand_id": "S2-924277602",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Indianapolis Orthopedic American Care LLC",
+        "cand_name": "Indianapolis Care American Orthopedic LLC",
+        "s1_addr": "7281 30th Street, Indianapolis, IN",
+        "cand_addr": "7281 30TH SAINT, INDIANAPOLIS, IN"
+      },
+      {
+        "s1_id": "S1-293109677",
+        "cand_id": "S2-839145313",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Upper Apartment Center",
+        "cand_name": "Upper Center Apartment",
+        "s1_addr": "2369 S Point Road, Belmont, NC",
+        "cand_addr": "2369 S POINT RD, BELMONT, NC"
+      },
+      {
+        "s1_id": "S1-424170762",
+        "cand_id": "S3-954200643",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Martinez Advanced Miluna PLLC",
+        "cand_name": "Martinez Advanced PLLC Miluna",
+        "s1_addr": "314 Iroquois Road, Hillside, IL",
+        "cand_addr": "314 Iroquois Rd, Hillside, Illinois"
+      },
+      {
+        "s1_id": "S1-613244295",
+        "cand_id": "S2-937577903",
+        "score": 0.9999,
+        "category": "native script",
+        "s1_name": "Mountain Cornerstone Constellation, LLC",
+        "cand_name": "Mountain Cornerstone C\u00f3nstellation, LLC",
+        "s1_addr": "3170 Farm Road 125, Springfield, MO",
+        "cand_addr": "3170. FARM ROAD 125, SPRINGFIELD, MO"
+      },
+      {
+        "s1_id": "S1-552544757",
+        "cand_id": "S2-843039474",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "N 5 Apex Rail Inc",
+        "cand_name": "N  Apex 5 Rail Inc",
+        "s1_addr": "1017 Dogwood Lane, Milwaukie, OR",
+        "cand_addr": "1017 DOGWOOD LN, MILWAUKIE, OR"
+      },
+      {
+        "s1_id": "S1-73518516",
+        "cand_id": "S3-862475897",
+        "score": 0.9999,
+        "category": "native script",
+        "s1_name": "Kaler and Ragland",
+        "cand_name": "Kaler \u00e1nd (Ragland)",
+        "s1_addr": "510 Hooper Lane, Chapel Hill, NC",
+        "cand_addr": "510 Hooper Lane, Chapel Hill, North Carolina"
+      },
+      {
+        "s1_id": "S1-151163479",
+        "cand_id": "S3-745763091",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Flowers Frontier Evo Clinic",
+        "cand_name": "Flowers Clinic Frontier Evo",
+        "s1_addr": "4501 Jeff Scott Drive, Unit D, Killeen, TX",
+        "cand_addr": "4501 Jeff Scott Dr, Killeen, Texas"
+      },
+      {
+        "s1_id": "S1-125472274",
+        "cand_id": "S3-9603748",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Eagle India of Nagpur",
+        "cand_name": "M/s Eagle India Nagpur Of",
+        "s1_addr": "Flat No 35, Yashoda Nagar Stage-Ii, H.Road, Nagpur, Maharashtra",
+        "cand_addr": "Flat No 35, Yashoda Nagar Stage-ii, H.road, Nagpur, \u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"
+      },
+      {
+        "s1_id": "S1-47756016",
+        "cand_id": "S2-779063605",
+        "score": 0.9999,
+        "category": "native script",
+        "s1_name": "Best Plantations Private Limited",
+        "cand_name": "Best Plantations Pr\u00edvate Limited",
+        "s1_addr": "Plot No 146, Pi Estate, Ghaziabad, Uttar Pradesh",
+        "cand_addr": "PLOT NO 146, PI ESTATE, GHAZIABAD, Uttar Pradesh"
+      },
+      {
+        "s1_id": "S1-365310135",
+        "cand_id": "S3-250237210",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Liuka Choate Offshore LLC",
+        "cand_name": "Choate, Liuka Offshore L.L.C.",
+        "s1_addr": "52 Tremont Street, Taunton, MA",
+        "cand_addr": "#52 Tremont St, Taunton, Massachusetts"
+      },
+      {
+        "s1_id": "S1-351950757",
+        "cand_id": "S3-618676722",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Heartland Alliancebernstein LLC",
+        "cand_name": "Alliancebernstein Heartland LLC",
+        "s1_addr": "265 Grove Avenue, Cedarhurst, NY",
+        "cand_addr": "265 Grove Ave, Cedarhurst, New York"
+      },
+      {
+        "s1_id": "S1-125472274",
+        "cand_id": "S2-218583667",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Eagle India of Nagpur",
+        "cand_name": "EAGLE OF INDIA [NAGPUR]",
+        "s1_addr": "Flat No 35, Yashoda Nagar Stage-Ii, H.Road, Nagpur, Maharashtra",
+        "cand_addr": "H.NO 35 , YASHODA NAGAR STAGE-II, H.ROAD, NAGPUR, \u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"
+      },
+      {
+        "s1_id": "S1-856490667",
+        "cand_id": "S3-756449985",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Sutherland's Federal Security",
+        "cand_name": "Sutherland's Federal Smeuryt",
+        "s1_addr": "2 Bellevue Avenue, NY, Cortland",
+        "cand_addr": "2 Bellevue Avenue, NULL, Cortland, New York"
+      },
+      {
+        "s1_id": "S1-86804153",
+        "cand_id": "S2-403191215",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Regional Cornerstone Citizens LLC",
+        "cand_name": "Regional LLC Citizens Cornerstone",
+        "s1_addr": "1300 Winding Creek Road, NC, Granite Quarry",
+        "cand_addr": "1300 WINDING CREEK ROAD, GRANITE QUARRRY, NC"
+      },
+      {
+        "s1_id": "S1-424170762",
+        "cand_id": "S3-819721483",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Martinez Advanced Miluna PLLC",
+        "cand_name": "Martinez Advanced Miluna",
+        "s1_addr": "314 Iroquois Road, Hillside, IL",
+        "cand_addr": "314 Iroquois Road, Hillside, Illinois"
+      },
+      {
+        "s1_id": "S1-165368525",
+        "cand_id": "S2-754946917",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Lower Coastal Detailing LLC",
+        "cand_name": "L.L.C. Lower Coastal Detailing",
+        "s1_addr": "3635 Maple Glenn Lane, Charlotte, NC",
+        "cand_addr": "##3635 MAPLE GLENN LANE, CHARLOTTE, NC"
+      },
+      {
+        "s1_id": "S1-952266463",
+        "cand_id": "S3-367585792",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Legacy Jaws Inc",
+        "cand_name": "inc legacy jaws",
+        "s1_addr": "1820 7th Street, Unit 419, Phoenix, AZ",
+        "cand_addr": "1820 7th Street, Unit 419, Rio Salado, Arizona"
+      },
+      {
+        "s1_id": "S1-125472274",
+        "cand_id": "S3-176715932",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Eagle India of Nagpur",
+        "cand_name": "Eagle of Nagpur Center",
+        "s1_addr": "Flat No 35, Yashoda Nagar Stage-Ii, H.Road, Nagpur, Maharashtra",
+        "cand_addr": "Flat No 35, Yashoda Nagar Stage-ii, H.road, Nagpur, MH"
+      }
+    ],
+    "new_channel_sample": [
+      {
+        "s1_id": "S1-314045617",
+        "cand_id": "S3-359536205",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Williams Premier Xrp",
+        "cand_name": "Williams Xrp Premier",
+        "s1_addr": "845 Mildred Avenue, Dundalk, MD",
+        "cand_addr": "845 Mildred Avenue, <NULL>, Dundalk, Maryland"
+      },
+      {
+        "s1_id": "S1-421315715",
+        "cand_id": "S2-834091361",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Patriot Reliable Waste",
+        "cand_name": "Waste Patriot Reliable",
+        "s1_addr": "3321 Dayton-springfield Road, Springfield, OH",
+        "cand_addr": "3321 Dayton-springfield Rd, null, SPRINGFFIELD, OH"
+      },
+      {
+        "s1_id": "S1-93053516",
+        "cand_id": "S2-924277602",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Indianapolis Orthopedic American Care LLC",
+        "cand_name": "Indianapolis Care American Orthopedic LLC",
+        "s1_addr": "7281 30th Street, Indianapolis, IN",
+        "cand_addr": "7281 30TH SAINT, INDIANAPOLIS, IN"
+      },
+      {
+        "s1_id": "S1-293109677",
+        "cand_id": "S2-839145313",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Upper Apartment Center",
+        "cand_name": "Upper Center Apartment",
+        "s1_addr": "2369 S Point Road, Belmont, NC",
+        "cand_addr": "2369 S POINT RD, BELMONT, NC"
+      },
+      {
+        "s1_id": "S1-424170762",
+        "cand_id": "S3-954200643",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Martinez Advanced Miluna PLLC",
+        "cand_name": "Martinez Advanced PLLC Miluna",
+        "s1_addr": "314 Iroquois Road, Hillside, IL",
+        "cand_addr": "314 Iroquois Rd, Hillside, Illinois"
+      },
+      {
+        "s1_id": "S1-613244295",
+        "cand_id": "S2-937577903",
+        "score": 0.9999,
+        "category": "native script",
+        "s1_name": "Mountain Cornerstone Constellation, LLC",
+        "cand_name": "Mountain Cornerstone C\u00f3nstellation, LLC",
+        "s1_addr": "3170 Farm Road 125, Springfield, MO",
+        "cand_addr": "3170. FARM ROAD 125, SPRINGFIELD, MO"
+      },
+      {
+        "s1_id": "S1-552544757",
+        "cand_id": "S2-843039474",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "N 5 Apex Rail Inc",
+        "cand_name": "N  Apex 5 Rail Inc",
+        "s1_addr": "1017 Dogwood Lane, Milwaukie, OR",
+        "cand_addr": "1017 DOGWOOD LN, MILWAUKIE, OR"
+      },
+      {
+        "s1_id": "S1-73518516",
+        "cand_id": "S3-862475897",
+        "score": 0.9999,
+        "category": "native script",
+        "s1_name": "Kaler and Ragland",
+        "cand_name": "Kaler \u00e1nd (Ragland)",
+        "s1_addr": "510 Hooper Lane, Chapel Hill, NC",
+        "cand_addr": "510 Hooper Lane, Chapel Hill, North Carolina"
+      },
+      {
+        "s1_id": "S1-151163479",
+        "cand_id": "S3-745763091",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Flowers Frontier Evo Clinic",
+        "cand_name": "Flowers Clinic Frontier Evo",
+        "s1_addr": "4501 Jeff Scott Drive, Unit D, Killeen, TX",
+        "cand_addr": "4501 Jeff Scott Dr, Killeen, Texas"
+      },
+      {
+        "s1_id": "S1-125472274",
+        "cand_id": "S3-9603748",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Eagle India of Nagpur",
+        "cand_name": "M/s Eagle India Nagpur Of",
+        "s1_addr": "Flat No 35, Yashoda Nagar Stage-Ii, H.Road, Nagpur, Maharashtra",
+        "cand_addr": "Flat No 35, Yashoda Nagar Stage-ii, H.road, Nagpur, \u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"
+      },
+      {
+        "s1_id": "S1-47756016",
+        "cand_id": "S2-779063605",
+        "score": 0.9999,
+        "category": "native script",
+        "s1_name": "Best Plantations Private Limited",
+        "cand_name": "Best Plantations Pr\u00edvate Limited",
+        "s1_addr": "Plot No 146, Pi Estate, Ghaziabad, Uttar Pradesh",
+        "cand_addr": "PLOT NO 146, PI ESTATE, GHAZIABAD, Uttar Pradesh"
+      },
+      {
+        "s1_id": "S1-365310135",
+        "cand_id": "S3-250237210",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Liuka Choate Offshore LLC",
+        "cand_name": "Choate, Liuka Offshore L.L.C.",
+        "s1_addr": "52 Tremont Street, Taunton, MA",
+        "cand_addr": "#52 Tremont St, Taunton, Massachusetts"
+      },
+      {
+        "s1_id": "S1-351950757",
+        "cand_id": "S3-618676722",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Heartland Alliancebernstein LLC",
+        "cand_name": "Alliancebernstein Heartland LLC",
+        "s1_addr": "265 Grove Avenue, Cedarhurst, NY",
+        "cand_addr": "265 Grove Ave, Cedarhurst, New York"
+      },
+      {
+        "s1_id": "S1-125472274",
+        "cand_id": "S2-218583667",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Eagle India of Nagpur",
+        "cand_name": "EAGLE OF INDIA [NAGPUR]",
+        "s1_addr": "Flat No 35, Yashoda Nagar Stage-Ii, H.Road, Nagpur, Maharashtra",
+        "cand_addr": "H.NO 35 , YASHODA NAGAR STAGE-II, H.ROAD, NAGPUR, \u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"
+      },
+      {
+        "s1_id": "S1-856490667",
+        "cand_id": "S3-756449985",
+        "score": 0.9999,
+        "category": "other",
+        "s1_name": "Sutherland's Federal Security",
+        "cand_name": "Sutherland's Federal Smeuryt",
+        "s1_addr": "2 Bellevue Avenue, NY, Cortland",
+        "cand_addr": "2 Bellevue Avenue, NULL, Cortland, New York"
+      },
+      {
+        "s1_id": "S1-86804153",
+        "cand_id": "S2-403191215",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Regional Cornerstone Citizens LLC",
+        "cand_name": "Regional LLC Citizens Cornerstone",
+        "s1_addr": "1300 Winding Creek Road, NC, Granite Quarry",
+        "cand_addr": "1300 WINDING CREEK ROAD, GRANITE QUARRRY, NC"
+      },
+      {
+        "s1_id": "S1-424170762",
+        "cand_id": "S3-819721483",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Martinez Advanced Miluna PLLC",
+        "cand_name": "Martinez Advanced Miluna",
+        "s1_addr": "314 Iroquois Road, Hillside, IL",
+        "cand_addr": "314 Iroquois Road, Hillside, Illinois"
+      },
+      {
+        "s1_id": "S1-165368525",
+        "cand_id": "S2-754946917",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Lower Coastal Detailing LLC",
+        "cand_name": "L.L.C. Lower Coastal Detailing",
+        "s1_addr": "3635 Maple Glenn Lane, Charlotte, NC",
+        "cand_addr": "##3635 MAPLE GLENN LANE, CHARLOTTE, NC"
+      },
+      {
+        "s1_id": "S1-952266463",
+        "cand_id": "S3-367585792",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Legacy Jaws Inc",
+        "cand_name": "inc legacy jaws",
+        "s1_addr": "1820 7th Street, Unit 419, Phoenix, AZ",
+        "cand_addr": "1820 7th Street, Unit 419, Rio Salado, Arizona"
+      },
+      {
+        "s1_id": "S1-125472274",
+        "cand_id": "S3-176715932",
+        "score": 0.9998,
+        "category": "other",
+        "s1_name": "Eagle India of Nagpur",
+        "cand_name": "Eagle of Nagpur Center",
+        "s1_addr": "Flat No 35, Yashoda Nagar Stage-Ii, H.Road, Nagpur, Maharashtra",
+        "cand_addr": "Flat No 35, Yashoda Nagar Stage-ii, H.road, Nagpur, MH"
+      }
+    ]
+  }
+}

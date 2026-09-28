@@ -1,0 +1,372 @@
+{
+  "experiments_summary": [
+    {
+      "name": "P0: Baseline (74 feats)",
+      "features_count": 74,
+      "macro_f05": 0.8512277683766585,
+      "macro_precision": 0.9127433438305183,
+      "macro_recall": 0.7452742787161625,
+      "e2e_true_matches": 2581,
+      "e2e_recall": 73.74285714285715,
+      "blocker_recall": 81.22857142857143,
+      "classifier_retention": 90.78438269433697,
+      "singleton_f05": 0.6708595387840671,
+      "zero_match_f05": 0.9122807017543859,
+      "multi_match_f05": 0.8580740509958892,
+      "delta_f05_vs_p0": 0.0
+    },
+    {
+      "name": "A1: Missing Address (+2 feats)",
+      "features_count": 76,
+      "macro_f05": 0.8481057862261017,
+      "macro_precision": 0.9092506441454338,
+      "macro_recall": 0.7426929255336069,
+      "e2e_true_matches": 2577,
+      "e2e_recall": 73.62857142857143,
+      "blocker_recall": 81.22857142857143,
+      "classifier_retention": 90.64368624692226,
+      "singleton_f05": 0.6792452830188679,
+      "zero_match_f05": 0.8947368421052632,
+      "multi_match_f05": 0.8551909624478032,
+      "delta_f05_vs_p0": -0.0031219821505568124
+    },
+    {
+      "name": "B1: Native Script / Accents (+2 feats)",
+      "features_count": 76,
+      "macro_f05": 0.8495884277998842,
+      "macro_precision": 0.9115624105353565,
+      "macro_recall": 0.7418841651557083,
+      "e2e_true_matches": 2570,
+      "e2e_recall": 73.42857142857143,
+      "blocker_recall": 81.22857142857143,
+      "classifier_retention": 90.39746746394654,
+      "singleton_f05": 0.6792452830188679,
+      "zero_match_f05": 0.9122807017543859,
+      "multi_match_f05": 0.8557311384507708,
+      "delta_f05_vs_p0": -0.0016393405767742841
+    },
+    {
+      "name": "C1: Lexical Shift / Aliases (+2 feats)",
+      "features_count": 76,
+      "macro_f05": 0.8493632839470343,
+      "macro_precision": 0.9106617997900563,
+      "macro_recall": 0.7432869707669306,
+      "e2e_true_matches": 2579,
+      "e2e_recall": 73.68571428571428,
+      "blocker_recall": 81.22857142857143,
+      "classifier_retention": 90.71403447062961,
+      "singleton_f05": 0.6792452830188679,
+      "zero_match_f05": 0.8947368421052632,
+      "multi_match_f05": 0.8566042312828156,
+      "delta_f05_vs_p0": -0.0018644844296241692
+    },
+    {
+      "name": "D1: Address Disambiguation (+2 feats)",
+      "features_count": 76,
+      "macro_f05": 0.853023888090061,
+      "macro_precision": 0.9139218914018513,
+      "macro_recall": 0.7469764926678755,
+      "e2e_true_matches": 2582,
+      "e2e_recall": 73.77142857142857,
+      "blocker_recall": 81.22857142857143,
+      "classifier_retention": 90.81955680619065,
+      "singleton_f05": 0.6981132075471698,
+      "zero_match_f05": 0.9122807017543859,
+      "multi_match_f05": 0.8584660363895055,
+      "delta_f05_vs_p0": 0.0017961197134025442
+    },
+    {
+      "name": "F2: Combined Top Families (76 feats)",
+      "features_count": 76,
+      "macro_f05": 0.853023888090061,
+      "macro_precision": 0.9139218914018513,
+      "macro_recall": 0.7469764926678755,
+      "e2e_true_matches": 2582,
+      "e2e_recall": 73.77142857142857,
+      "blocker_recall": 81.22857142857143,
+      "classifier_retention": 90.81955680619065,
+      "singleton_f05": 0.6981132075471698,
+      "zero_match_f05": 0.9122807017543859,
+      "multi_match_f05": 0.8584660363895055,
+      "delta_f05_vs_p0": 0.0017961197134025442
+    }
+  ],
+  "winning_config": {
+    "name": "D1: Address Disambiguation (+2 feats)",
+    "features_count": 76,
+    "macro_f05": 0.853023888090061,
+    "macro_precision": 0.9139218914018513,
+    "macro_recall": 0.7469764926678755,
+    "e2e_true_matches": 2582,
+    "delta_f05": 0.0017961197134025442,
+    "newly_recovered_matches_count": 19,
+    "newly_introduced_fps_count": 14,
+    "eliminated_fps_count": 11
+  },
+  "threshold_sweep": [
+    {
+      "threshold": 0.8,
+      "macro_f05": 0.8496687794727955,
+      "macro_precision": 0.9032650076487753,
+      "macro_recall": 0.7613850717307632,
+      "e2e_true_matches": 2648,
+      "e2e_recall": 75.65714285714286,
+      "pred_matches": 2785,
+      "empty_pct": 10.521042084168336
+    },
+    {
+      "threshold": 0.82,
+      "macro_f05": 0.8511764068732762,
+      "macro_precision": 0.9064511418218832,
+      "macro_recall": 0.7591544199510132,
+      "e2e_true_matches": 2639,
+      "e2e_recall": 75.4,
+      "pred_matches": 2762,
+      "empty_pct": 10.521042084168336
+    },
+    {
+      "threshold": 0.84,
+      "macro_f05": 0.850401102512303,
+      "macro_precision": 0.9067070649234977,
+      "macro_recall": 0.7549770175271178,
+      "e2e_true_matches": 2623,
+      "e2e_recall": 74.94285714285715,
+      "pred_matches": 2727,
+      "empty_pct": 10.92184368737475
+    },
+    {
+      "threshold": 0.86,
+      "macro_f05": 0.8506536983455029,
+      "macro_precision": 0.909122610299965,
+      "macro_recall": 0.7505598498584471,
+      "e2e_true_matches": 2606,
+      "e2e_recall": 74.45714285714286,
+      "pred_matches": 2697,
+      "empty_pct": 10.92184368737475
+    },
+    {
+      "threshold": 0.88,
+      "macro_f05": 0.853023888090061,
+      "macro_precision": 0.9139218914018513,
+      "macro_recall": 0.7469764926678755,
+      "e2e_true_matches": 2582,
+      "e2e_recall": 73.77142857142857,
+      "pred_matches": 2659,
+      "empty_pct": 11.122244488977955
+    },
+    {
+      "threshold": 0.9,
+      "macro_f05": 0.851116172142617,
+      "macro_precision": 0.9149238954098674,
+      "macro_recall": 0.7390773610713489,
+      "e2e_true_matches": 2554,
+      "e2e_recall": 72.97142857142858,
+      "pred_matches": 2619,
+      "empty_pct": 11.52304609218437
+    },
+    {
+      "threshold": 0.92,
+      "macro_f05": 0.8472563036637408,
+      "macro_precision": 0.9127815154117759,
+      "macro_recall": 0.7297801953112575,
+      "e2e_true_matches": 2517,
+      "e2e_recall": 71.91428571428573,
+      "pred_matches": 2568,
+      "empty_pct": 12.124248496993987
+    }
+  ],
+  "top30_features": [
+    {
+      "feature": "address_token_overlap_coef",
+      "gain_pct": "23.54%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "high_name_sim_and_address_overlap",
+      "gain_pct": "14.18%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature": "address_token_jaccard",
+      "gain_pct": "12.80%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "shared_name_and_shared_number",
+      "gain_pct": "6.17%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature": "feat_name_token_jaccard_cand_addr_missing",
+      "gain_pct": "5.93%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature": "address_numeric_token_jaccard",
+      "gain_pct": "5.25%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "address_token_containment",
+      "gain_pct": "4.18%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "feat_name_3gram_cand_addr_missing",
+      "gain_pct": "2.65%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature": "exact_name_and_address_number_match",
+      "gain_pct": "2.21%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature": "feat_name_char_2gram_jaccard",
+      "gain_pct": "1.78%",
+      "group": "Group I: OCR & Typo Robustness"
+    },
+    {
+      "feature": "name_char_3gram_jaccard",
+      "gain_pct": "1.63%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "name_token_containment_cand",
+      "gain_pct": "1.42%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "address_shared_token_count",
+      "gain_pct": "0.98%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "feat_name_lev_cand_addr_missing",
+      "gain_pct": "0.95%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature": "address_building_num_match",
+      "gain_pct": "0.82%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "feat_name_best_token_similarity",
+      "gain_pct": "0.75%",
+      "group": "Group H: Alias & Trade Names"
+    },
+    {
+      "feature": "cross_script_and_strong_address",
+      "gain_pct": "0.68%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature": "address_first_token_match",
+      "gain_pct": "0.63%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature": "name_jaro_winkler_sim",
+      "gain_pct": "0.63%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "name_token_jaccard",
+      "gain_pct": "0.59%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "blocking_rank_order",
+      "gain_pct": "0.55%",
+      "group": "Group F: Blocking Provenance"
+    },
+    {
+      "feature": "name_both_latin",
+      "gain_pct": "0.52%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "feat_same_postal_weak_name",
+      "gain_pct": "0.51%",
+      "group": "Group K: Address Disambiguation (FPs)"
+    },
+    {
+      "feature": "fired_chan_b",
+      "gain_pct": "0.51%",
+      "group": "Group F: Blocking Provenance"
+    },
+    {
+      "feature": "feat_distinctive_name_zero_overlap",
+      "gain_pct": "0.48%",
+      "group": "Group K: Address Disambiguation (FPs)"
+    },
+    {
+      "feature": "legal_suffix_mismatch",
+      "gain_pct": "0.44%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature": "feat_name_containment_cand_addr_missing",
+      "gain_pct": "0.44%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature": "cand_name_has_url",
+      "gain_pct": "0.42%",
+      "group": "Group E: Source-Specific Signals"
+    },
+    {
+      "feature": "feat_name_distinctive_jaccard",
+      "gain_pct": "0.40%",
+      "group": "Group H: Alias & Trade Names"
+    },
+    {
+      "feature": "fired_chan_a2",
+      "gain_pct": "0.36%",
+      "group": "Group F: Blocking Provenance"
+    }
+  ],
+  "group_gains": [
+    {
+      "group": "Group C: Address Similarities",
+      "gain_pct": "49.67%"
+    },
+    {
+      "group": "Group D: Cross-Field Interactions",
+      "gain_pct": "23.38%"
+    },
+    {
+      "group": "Group G: Missing-Address Recovery",
+      "gain_pct": "9.97%"
+    },
+    {
+      "group": "Group B: Name Similarities",
+      "gain_pct": "8.77%"
+    },
+    {
+      "group": "Group F: Blocking Provenance",
+      "gain_pct": "2.73%"
+    },
+    {
+      "group": "Group I: OCR & Typo Robustness",
+      "gain_pct": "1.78%"
+    },
+    {
+      "group": "Group K: Address Disambiguation (FPs)",
+      "gain_pct": "1.39%"
+    },
+    {
+      "group": "Group E: Source-Specific Signals",
+      "gain_pct": "1.16%"
+    },
+    {
+      "group": "Group H: Alias & Trade Names",
+      "gain_pct": "1.15%"
+    },
+    {
+      "group": "Group A: Country Invariants",
+      "gain_pct": "0.00%"
+    }
+  ]
+}

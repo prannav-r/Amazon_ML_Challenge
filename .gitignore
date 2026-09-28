@@ -64,11 +64,14 @@ checkpoints/
 *.lgb
 *.xgb
 !output/frozen_model_c1.pkl
+!output/frozen_model_d1.pkl
 
 # --- Submission Outputs & Logs ---
 output/*
 !output/.gitkeep
 !output/frozen_model_c1.pkl
+!output/frozen_model_d1.pkl
+!output/*.json
 *.log
 logs/
 

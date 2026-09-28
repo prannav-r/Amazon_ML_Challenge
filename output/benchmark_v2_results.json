@@ -1,0 +1,431 @@
+{
+  "summary_canonical_088": [
+    {
+      "Experiment": "Baseline",
+      "Features": 65,
+      "Threshold": 0.88,
+      "Macro Prec": "0.8927",
+      "Macro Rec": "0.7000",
+      "Macro F0.5": "0.8205",
+      "Delta F0.5": "+0.0000",
+      "Pred Matches": 2475,
+      "% Empty": "13.4%",
+      "Single F0.5": "0.6247",
+      "Zero F0.5": "0.9298",
+      "Multi F0.5": "0.8252"
+    },
+    {
+      "Experiment": "Exp_A_MissingAddr",
+      "Features": 72,
+      "Threshold": 0.88,
+      "Macro Prec": "0.8876",
+      "Macro Rec": "0.6981",
+      "Macro F0.5": "0.8166",
+      "Delta F0.5": "-0.0039",
+      "Pred Matches": 2486,
+      "% Empty": "13.4%",
+      "Single F0.5": "0.6059",
+      "Zero F0.5": "0.9123",
+      "Multi F0.5": "0.8230"
+    },
+    {
+      "Experiment": "Exp_B_Aliases",
+      "Features": 70,
+      "Threshold": 0.88,
+      "Macro Prec": "0.8941",
+      "Macro Rec": "0.6994",
+      "Macro F0.5": "0.8213",
+      "Delta F0.5": "+0.0008",
+      "Pred Matches": 2474,
+      "% Empty": "13.2%",
+      "Single F0.5": "0.6247",
+      "Zero F0.5": "0.9123",
+      "Multi F0.5": "0.8272"
+    },
+    {
+      "Experiment": "Exp_C_TypoOCR",
+      "Features": 70,
+      "Threshold": 0.88,
+      "Macro Prec": "0.8874",
+      "Macro Rec": "0.6969",
+      "Macro F0.5": "0.8164",
+      "Delta F0.5": "-0.0041",
+      "Pred Matches": 2484,
+      "% Empty": "13.5%",
+      "Single F0.5": "0.5954",
+      "Zero F0.5": "0.8947",
+      "Multi F0.5": "0.8246"
+    },
+    {
+      "Experiment": "Exp_D_CrossScript",
+      "Features": 69,
+      "Threshold": 0.88,
+      "Macro Prec": "0.8890",
+      "Macro Rec": "0.6994",
+      "Macro F0.5": "0.8176",
+      "Delta F0.5": "-0.0029",
+      "Pred Matches": 2487,
+      "% Empty": "13.1%",
+      "Single F0.5": "0.6247",
+      "Zero F0.5": "0.8772",
+      "Multi F0.5": "0.8253"
+    },
+    {
+      "Experiment": "Exp_E_AddressDisambig",
+      "Features": 71,
+      "Threshold": 0.88,
+      "Macro Prec": "0.8881",
+      "Macro Rec": "0.6962",
+      "Macro F0.5": "0.8160",
+      "Delta F0.5": "-0.0045",
+      "Pred Matches": 2476,
+      "% Empty": "13.5%",
+      "Single F0.5": "0.5870",
+      "Zero F0.5": "0.9123",
+      "Multi F0.5": "0.8234"
+    },
+    {
+      "Experiment": "Exp_F_AllNew",
+      "Features": 92,
+      "Threshold": 0.88,
+      "Macro Prec": "0.8914",
+      "Macro Rec": "0.6992",
+      "Macro F0.5": "0.8196",
+      "Delta F0.5": "-0.0009",
+      "Pred Matches": 2488,
+      "% Empty": "13.3%",
+      "Single F0.5": "0.5954",
+      "Zero F0.5": "0.8947",
+      "Multi F0.5": "0.8282"
+    }
+  ],
+  "summary_optimal": [
+    {
+      "Experiment": "Baseline",
+      "Features": 65,
+      "Opt Thresh": "0.87",
+      "Macro Prec": "0.8918",
+      "Macro Rec": "0.7032",
+      "Macro F0.5": "0.8207",
+      "Delta F0.5": "+0.0000",
+      "Pred Matches": 2493,
+      "% Empty": "13.4%",
+      "Single F0.5": "0.6247",
+      "Zero F0.5": "0.9298",
+      "Multi F0.5": "0.8254"
+    },
+    {
+      "Experiment": "Exp_A_MissingAddr",
+      "Features": 72,
+      "Opt Thresh": "0.83",
+      "Macro Prec": "0.8845",
+      "Macro Rec": "0.7127",
+      "Macro F0.5": "0.8191",
+      "Delta F0.5": "-0.0017",
+      "Pred Matches": 2575,
+      "% Empty": "13.0%",
+      "Single F0.5": "0.6164",
+      "Zero F0.5": "0.9123",
+      "Multi F0.5": "0.8252"
+    },
+    {
+      "Experiment": "Exp_B_Aliases",
+      "Features": 70,
+      "Opt Thresh": "0.88",
+      "Macro Prec": "0.8941",
+      "Macro Rec": "0.6994",
+      "Macro F0.5": "0.8213",
+      "Delta F0.5": "+0.0006",
+      "Pred Matches": 2474,
+      "% Empty": "13.2%",
+      "Single F0.5": "0.6247",
+      "Zero F0.5": "0.9123",
+      "Multi F0.5": "0.8272"
+    },
+    {
+      "Experiment": "Exp_C_TypoOCR",
+      "Features": 70,
+      "Opt Thresh": "0.86",
+      "Macro Prec": "0.8889",
+      "Macro Rec": "0.7036",
+      "Macro F0.5": "0.8193",
+      "Delta F0.5": "-0.0015",
+      "Pred Matches": 2517,
+      "% Empty": "13.1%",
+      "Single F0.5": "0.6331",
+      "Zero F0.5": "0.8947",
+      "Multi F0.5": "0.8256"
+    },
+    {
+      "Experiment": "Exp_D_CrossScript",
+      "Features": 69,
+      "Opt Thresh": "0.89",
+      "Macro Prec": "0.8930",
+      "Macro Rec": "0.7003",
+      "Macro F0.5": "0.8206",
+      "Delta F0.5": "-0.0001",
+      "Pred Matches": 2469,
+      "% Empty": "13.6%",
+      "Single F0.5": "0.6059",
+      "Zero F0.5": "0.9474",
+      "Multi F0.5": "0.8253"
+    },
+    {
+      "Experiment": "Exp_E_AddressDisambig",
+      "Features": 71,
+      "Opt Thresh": "0.81",
+      "Macro Prec": "0.8836",
+      "Macro Rec": "0.7145",
+      "Macro F0.5": "0.8188",
+      "Delta F0.5": "-0.0019",
+      "Pred Matches": 2596,
+      "% Empty": "12.4%",
+      "Single F0.5": "0.6268",
+      "Zero F0.5": "0.8772",
+      "Multi F0.5": "0.8265"
+    },
+    {
+      "Experiment": "Exp_F_AllNew",
+      "Features": 92,
+      "Opt Thresh": "0.91",
+      "Macro Prec": "0.8957",
+      "Macro Rec": "0.6956",
+      "Macro F0.5": "0.8220",
+      "Delta F0.5": "+0.0012",
+      "Pred Matches": 2435,
+      "% Empty": "14.1%",
+      "Single F0.5": "0.5954",
+      "Zero F0.5": "0.9649",
+      "Multi F0.5": "0.8263"
+    }
+  ],
+  "best_experiment": "Exp_F_AllNew",
+  "top30_features": [
+    {
+      "feature_name": "address_token_overlap_coef",
+      "gain": "0.27",
+      "gain_pct": "26.70%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature_name": "address_token_jaccard",
+      "gain": "0.14",
+      "gain_pct": "13.72%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature_name": "address_shared_token_count",
+      "gain": "0.06",
+      "gain_pct": "6.17%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature_name": "feat_name_token_jaccard_cand_addr_missing",
+      "gain": "0.06",
+      "gain_pct": "5.85%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature_name": "exact_name_and_address_number_match",
+      "gain": "0.04",
+      "gain_pct": "4.37%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature_name": "feat_name_3gram_cand_addr_missing",
+      "gain": "0.04",
+      "gain_pct": "4.15%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature_name": "shared_name_and_shared_number",
+      "gain": "0.04",
+      "gain_pct": "4.10%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature_name": "feat_name_char_2gram_jaccard",
+      "gain": "0.03",
+      "gain_pct": "3.02%",
+      "group": "Group I: OCR & Typo Robustness"
+    },
+    {
+      "feature_name": "address_token_containment",
+      "gain": "0.03",
+      "gain_pct": "2.71%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature_name": "high_name_sim_and_address_overlap",
+      "gain": "0.02",
+      "gain_pct": "1.99%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature_name": "cross_script_and_strong_address",
+      "gain": "0.02",
+      "gain_pct": "1.78%",
+      "group": "Group D: Cross-Field Interactions"
+    },
+    {
+      "feature_name": "address_numeric_token_jaccard",
+      "gain": "0.02",
+      "gain_pct": "1.53%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature_name": "name_token_containment_cand",
+      "gain": "0.01",
+      "gain_pct": "1.48%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature_name": "feat_name_containment_cand_addr_missing",
+      "gain": "0.01",
+      "gain_pct": "1.47%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature_name": "name_char_3gram_jaccard",
+      "gain": "0.01",
+      "gain_pct": "1.20%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature_name": "address_missing_cand",
+      "gain": "0.01",
+      "gain_pct": "0.93%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature_name": "feat_name_lev_cand_addr_missing",
+      "gain": "0.01",
+      "gain_pct": "0.84%",
+      "group": "Group G: Missing-Address Recovery"
+    },
+    {
+      "feature_name": "feat_name_best_token_similarity",
+      "gain": "0.01",
+      "gain_pct": "0.76%",
+      "group": "Group H: Alias & Trade Names"
+    },
+    {
+      "feature_name": "name_both_latin",
+      "gain": "0.01",
+      "gain_pct": "0.74%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature_name": "name_jaro_winkler_sim",
+      "gain": "0.01",
+      "gain_pct": "0.71%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature_name": "blocking_rank_order",
+      "gain": "0.01",
+      "gain_pct": "0.70%",
+      "group": "Group F: Blocking Provenance"
+    },
+    {
+      "feature_name": "address_building_num_match",
+      "gain": "0.01",
+      "gain_pct": "0.64%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature_name": "fired_chan_b",
+      "gain": "0.01",
+      "gain_pct": "0.53%",
+      "group": "Group F: Blocking Provenance"
+    },
+    {
+      "feature_name": "address_first_token_match",
+      "gain": "0.00",
+      "gain_pct": "0.49%",
+      "group": "Group C: Address Similarities"
+    },
+    {
+      "feature_name": "feat_same_postal_weak_name",
+      "gain": "0.00",
+      "gain_pct": "0.47%",
+      "group": "Group K: Address Disambiguation (FPs)"
+    },
+    {
+      "feature_name": "name_token_jaccard",
+      "gain": "0.00",
+      "gain_pct": "0.46%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature_name": "feat_name_distinctive_jaccard",
+      "gain": "0.00",
+      "gain_pct": "0.46%",
+      "group": "Group H: Alias & Trade Names"
+    },
+    {
+      "feature_name": "legal_suffix_mismatch",
+      "gain": "0.00",
+      "gain_pct": "0.45%",
+      "group": "Group B: Name Similarities"
+    },
+    {
+      "feature_name": "fired_chan_a",
+      "gain": "0.00",
+      "gain_pct": "0.42%",
+      "group": "Group F: Blocking Provenance"
+    },
+    {
+      "feature_name": "cand_name_has_url",
+      "gain": "0.00",
+      "gain_pct": "0.40%",
+      "group": "Group E: Source-Specific Signals"
+    }
+  ],
+  "group_importance": [
+    {
+      "group": "Group C: Address Similarities",
+      "gain_pct": "54.52%"
+    },
+    {
+      "group": "Group G: Missing-Address Recovery",
+      "gain_pct": "12.57%"
+    },
+    {
+      "group": "Group D: Cross-Field Interactions",
+      "gain_pct": "12.33%"
+    },
+    {
+      "group": "Group B: Name Similarities",
+      "gain_pct": "8.98%"
+    },
+    {
+      "group": "Group I: OCR & Typo Robustness",
+      "gain_pct": "4.11%"
+    },
+    {
+      "group": "Group F: Blocking Provenance",
+      "gain_pct": "3.08%"
+    },
+    {
+      "group": "Group H: Alias & Trade Names",
+      "gain_pct": "1.77%"
+    },
+    {
+      "group": "Group E: Source-Specific Signals",
+      "gain_pct": "1.09%"
+    },
+    {
+      "group": "Group K: Address Disambiguation (FPs)",
+      "gain_pct": "0.98%"
+    },
+    {
+      "group": "Group J: Cross-Script & Transliteration",
+      "gain_pct": "0.57%"
+    },
+    {
+      "group": "Group A: Country Invariants",
+      "gain_pct": "0.00%"
+    }
+  ]
+}

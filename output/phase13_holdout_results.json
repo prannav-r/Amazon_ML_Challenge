@@ -1,0 +1,264 @@
+{
+  "phase": 13,
+  "config_name": "Config_D1",
+  "holdout_s1_count": 478,
+  "train_s1_count": 1923,
+  "train_pair_count": 176233,
+  "train_pos": 4965,
+  "train_neg": 171268,
+  "scale_pos_weight": 5.873249991121393,
+  "feature_count": 76,
+  "threshold": 0.88,
+  "macro_f05": 0.835118500612357,
+  "macro_precision": 0.9023776316663346,
+  "macro_recall": 0.7206415620641562,
+  "e2e_true_matches": 1184,
+  "total_true_matches": 1660,
+  "e2e_recall": 71.32530120481928,
+  "blocker_recall": 80.42168674698796,
+  "retained_true": 1335,
+  "missed_blocker_true": 325,
+  "classifier_retention": 88.68913857677903,
+  "candidate_pairs_count": 51094,
+  "avg_candidates_per_s1": 106.89121338912133,
+  "median_candidates_per_s1": 107.5,
+  "p95_candidates_per_s1": 200.0,
+  "max_candidates_per_s1": 200,
+  "zero_candidate_s1_count": 3,
+  "total_predicted_matches": 1232,
+  "avg_predicted_matches": 2.577405857740586,
+  "empty_predictions_pct": 11.08786610878661,
+  "singleton_metrics": {
+    "count": 25,
+    "macro_f05": 0.7422222222222223,
+    "macro_precision": 0.74,
+    "macro_recall": 0.76,
+    "avg_pred_matches": 0.8,
+    "false_positive_rate": 5.0
+  },
+  "zero_match_metrics": {
+    "count": 27,
+    "macro_f05": 0.8888888888888888,
+    "macro_precision": 0.8888888888888888,
+    "macro_recall": 0.8888888888888888,
+    "avg_pred_matches": 0.1111111111111111,
+    "false_positive_rate": 11.11111111111111
+  },
+  "multi_match_metrics": {
+    "count": 426,
+    "macro_f05": 0.8371621777867397,
+    "macro_precision": 0.9127617557195021,
+    "macro_recall": 0.7076682316118936,
+    "avg_pred_matches": 2.8380281690140845,
+    "false_positive_rate": 3.6393713813068653
+  },
+  "us_metrics": {
+    "macro_f05": 0.8556493673236231,
+    "macro_precision": 0.9276339804214369,
+    "macro_recall": 0.7366600298656047,
+    "total_s1": 287,
+    "empty_pred_pct": 9.40766550522648,
+    "avg_pred_matches": 2.557491289198606,
+    "total_pred_matches": 734
+  },
+  "india_metrics": {
+    "macro_f05": 0.8042684548210833,
+    "macro_precision": 0.8644269924374637,
+    "macro_recall": 0.6965719272001994,
+    "total_s1": 191,
+    "empty_pred_pct": 13.612565445026178,
+    "avg_pred_matches": 2.607329842931937,
+    "total_pred_matches": 498
+  },
+  "top_features": [
+    {
+      "feature": "address_token_overlap_coef",
+      "gain": 0.2770942151546478,
+      "gain_pct": 27.709421515464783
+    },
+    {
+      "feature": "high_name_sim_and_address_overlap",
+      "gain": 0.15975525975227356,
+      "gain_pct": 15.975525975227356
+    },
+    {
+      "feature": "address_token_containment",
+      "gain": 0.08223842829465866,
+      "gain_pct": 8.223842829465866
+    },
+    {
+      "feature": "address_token_jaccard",
+      "gain": 0.07149413228034973,
+      "gain_pct": 7.149413228034973
+    },
+    {
+      "feature": "address_numeric_token_jaccard",
+      "gain": 0.054436858743429184,
+      "gain_pct": 5.443685874342918
+    },
+    {
+      "feature": "shared_name_and_shared_number",
+      "gain": 0.05016469955444336,
+      "gain_pct": 5.016469955444336
+    },
+    {
+      "feature": "feat_name_token_jaccard_cand_addr_missing",
+      "gain": 0.04709659889340401,
+      "gain_pct": 4.709659889340401
+    },
+    {
+      "feature": "feat_name_3gram_cand_addr_missing",
+      "gain": 0.030994869768619537,
+      "gain_pct": 3.0994869768619537
+    },
+    {
+      "feature": "feat_name_char_2gram_jaccard",
+      "gain": 0.016047906130552292,
+      "gain_pct": 1.6047906130552292
+    },
+    {
+      "feature": "exact_name_and_address_number_match",
+      "gain": 0.014468925073742867,
+      "gain_pct": 1.4468925073742867
+    },
+    {
+      "feature": "name_token_containment_cand",
+      "gain": 0.013560025952756405,
+      "gain_pct": 1.3560025952756405
+    },
+    {
+      "feature": "name_char_3gram_jaccard",
+      "gain": 0.011800652369856834,
+      "gain_pct": 1.1800652369856834
+    },
+    {
+      "feature": "address_shared_token_count",
+      "gain": 0.009291726164519787,
+      "gain_pct": 0.9291726164519787
+    },
+    {
+      "feature": "feat_name_lev_cand_addr_missing",
+      "gain": 0.00892008189111948,
+      "gain_pct": 0.892008189111948
+    },
+    {
+      "feature": "feat_high_addr_low_name_penalty",
+      "gain": 0.008189070038497448,
+      "gain_pct": 0.8189070038497448
+    },
+    {
+      "feature": "name_jaro_winkler_sim",
+      "gain": 0.0067823948338627815,
+      "gain_pct": 0.6782394833862782
+    },
+    {
+      "feature": "feat_name_best_token_similarity",
+      "gain": 0.006156594026833773,
+      "gain_pct": 0.6156594026833773
+    },
+    {
+      "feature": "name_both_latin",
+      "gain": 0.006074180360883474,
+      "gain_pct": 0.6074180360883474
+    },
+    {
+      "feature": "address_building_num_match",
+      "gain": 0.005713782738894224,
+      "gain_pct": 0.5713782738894224
+    },
+    {
+      "feature": "name_token_jaccard",
+      "gain": 0.005633513443171978,
+      "gain_pct": 0.5633513443171978
+    },
+    {
+      "feature": "blocking_rank_order",
+      "gain": 0.005258878692984581,
+      "gain_pct": 0.5258878692984581
+    },
+    {
+      "feature": "fired_chan_b",
+      "gain": 0.005075329449027777,
+      "gain_pct": 0.5075329449027777
+    },
+    {
+      "feature": "cross_script_and_strong_address",
+      "gain": 0.004772272426635027,
+      "gain_pct": 0.4772272426635027
+    },
+    {
+      "feature": "feat_name_distinctive_jaccard",
+      "gain": 0.004588469862937927,
+      "gain_pct": 0.4588469862937927
+    },
+    {
+      "feature": "address_first_token_match",
+      "gain": 0.004368945956230164,
+      "gain_pct": 0.43689459562301636
+    },
+    {
+      "feature": "fired_chan_a2",
+      "gain": 0.004321680869907141,
+      "gain_pct": 0.4321680869907141
+    },
+    {
+      "feature": "legal_suffix_mismatch",
+      "gain": 0.003981611225754023,
+      "gain_pct": 0.39816112257540226
+    },
+    {
+      "feature": "cand_name_has_url",
+      "gain": 0.003925649914890528,
+      "gain_pct": 0.3925649914890528
+    },
+    {
+      "feature": "name_last_token_match",
+      "gain": 0.003344362834468484,
+      "gain_pct": 0.3344362834468484
+    },
+    {
+      "feature": "name_length_diff",
+      "gain": 0.0032878827769309282,
+      "gain_pct": 0.3287882776930928
+    }
+  ],
+  "group_k_gains": [
+    {
+      "feature": "feat_high_addr_low_name_penalty",
+      "gain": 0.008189070038497448,
+      "gain_pct": 0.8189070038497448
+    },
+    {
+      "feature": "feat_same_building_weak_name",
+      "gain": 0.0012434007367119193,
+      "gain_pct": 0.12434007367119193
+    }
+  ],
+  "fp_category_counts": {
+    "OCR / Typo": 7,
+    "Other / Lexical Shift": 23,
+    "Missing Address": 9,
+    "Shared Address Token": 3,
+    "Native Script": 6
+  },
+  "fn_category_counts": {
+    "Franchise / Brand": 4,
+    "Missing Address": 46,
+    "Shared Address Token": 8,
+    "Native Script": 32,
+    "Address Number Match": 5,
+    "Other / Lexical Shift": 48,
+    "Aliases / Trade Names": 5,
+    "OCR / Typo": 3
+  },
+  "blocker_miss_category_counts": {
+    "Aliases / Trade Names": 20,
+    "Other / Lexical Shift": 128,
+    "Address Number Match": 53,
+    "Native Script": 87,
+    "Missing Address": 12,
+    "Shared Address Token": 15,
+    "Franchise / Brand": 1,
+    "OCR / Typo": 9
+  }
+}

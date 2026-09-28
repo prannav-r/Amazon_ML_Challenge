@@ -1,0 +1,79 @@
+{
+  "matching_results": {
+    "total_test_s1": 1732544,
+    "s1_with_matches": 1609397,
+    "s1_empty": 123147,
+    "percentage_empty": 7.10787143068228,
+    "total_predicted_matches": 6994107,
+    "average_predicted_matches": 4.0369000729563,
+    "median_predicted_matches": 3.0,
+    "maximum_predicted_matches": 149
+  },
+  "source_split": {
+    "total_s2_matches": 3608657,
+    "total_s3_matches": 3385450,
+    "percentage_s2": 51.59567904809006,
+    "percentage_s3": 48.404320951909945
+  },
+  "country_statistics": {
+    "India": {
+      "s1_count": 809986,
+      "s1_with_predictions": 719400,
+      "s1_empty": 90586,
+      "empty_percentage": 11.183650087779295,
+      "predicted_match_count": 2183229,
+      "average_matches_per_s1": 2.695391031449926,
+      "maximum_matches_per_s1": 82,
+      "total_candidates": 118816843,
+      "average_candidates_per_s1": 146.68999587647193,
+      "maximum_candidates_per_s1": 200,
+      "zero_candidate_count": 132
+    },
+    "US": {
+      "s1_count": 663106,
+      "s1_with_predictions": 635575,
+      "s1_empty": 27531,
+      "empty_percentage": 4.151824896773668,
+      "predicted_match_count": 2314185,
+      "average_matches_per_s1": 3.4899171474847157,
+      "maximum_matches_per_s1": 22,
+      "total_candidates": 73099441,
+      "average_candidates_per_s1": 110.23794235009184,
+      "maximum_candidates_per_s1": 200,
+      "zero_candidate_count": 200
+    },
+    "France": {
+      "s1_count": 259452,
+      "s1_with_predictions": 254422,
+      "s1_empty": 5030,
+      "empty_percentage": 1.9387015710034996,
+      "predicted_match_count": 2496693,
+      "average_matches_per_s1": 9.62294759724342,
+      "maximum_matches_per_s1": 149,
+      "total_candidates": 34613697,
+      "average_candidates_per_s1": 133.4107927477915,
+      "maximum_candidates_per_s1": 200,
+      "zero_candidate_count": 55
+    }
+  },
+  "candidate_statistics": {
+    "total_candidate_pairs": 226529981,
+    "average_candidates": 130.74991515366997,
+    "median_candidates": 141.0,
+    "p95_candidates": 200.0,
+    "maximum_candidates": 200,
+    "zero_candidate_count": 387,
+    "cap_200_count": 597021
+  },
+  "prediction_distribution": {
+    "0": 123147,
+    "1": 214770,
+    "2": 305072,
+    "3": 341581,
+    "4": 292809,
+    "5": 198420,
+    "6-10": 204010,
+    "11-20": 22855,
+    ">20": 29880
+  }
+}

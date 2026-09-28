@@ -1,0 +1,429 @@
+{
+  "random_seed": 2026,
+  "p11_train_s1_count": 2401,
+  "p11_holdout_s1_count": 597,
+  "holdout_manifest_path": "D:\\Github\\Amazon_ML_Challenge\\eda\\phase11_holdout_s1_ids.txt",
+  "leakage_checks": {
+    "overlap_p51": 0,
+    "overlap_p10": 0,
+    "overlap_train": 0
+  },
+  "holdout_composition": {
+    "countries": {
+      "India": 239,
+      "US": 358
+    },
+    "match_types": {
+      "multi": 532,
+      "single": 31,
+      "zero": 34
+    },
+    "total_true_matches": 2060
+  },
+  "frozen_config": {
+    "blocker": "Enhanced Blocking V2",
+    "cap": 200,
+    "features_count": 74,
+    "threshold": 0.88,
+    "scale_pos_weight": 5.851708912058258
+  },
+  "results_holdout": {
+    "macro_f05": 0.8350373333387731,
+    "macro_precision": 0.8966499162479061,
+    "macro_recall": 0.7300331020180267,
+    "e2e_true_matches": 1470,
+    "total_true_matches": 2060,
+    "e2e_recall": 71.35922330097088,
+    "pred_matches": 1518,
+    "avg_pred_per_s1": 2.542713567839196,
+    "empty_pct": 12.897822445561138,
+    "blocker_recall": 80.4368932038835,
+    "retained_true": 1657,
+    "total_candidate_pairs": 64120,
+    "avg_cands_per_s1": 107.4036850921273,
+    "median_cands_per_s1": 103.0,
+    "max_cands_per_s1": 200,
+    "zero_cand_s1_count": 4,
+    "classifier_retention": 88.71454435727217,
+    "groups": {
+      "singleton": {
+        "count": 31,
+        "macro_f05": 0.7598566308243728,
+        "macro_precision": 0.7580645161290323,
+        "macro_recall": 0.7741935483870968,
+        "avg_pred_matches": 0.8064516129032258,
+        "false_positive_rate": 4.0
+      },
+      "zero_match": {
+        "count": 34,
+        "macro_f05": 0.9411764705882353,
+        "macro_precision": 0.9411764705882353,
+        "macro_recall": 0.9411764705882353,
+        "avg_pred_matches": 0.08823529411764706,
+        "false_positive_rate": 5.88235294117647
+      },
+      "multi_match": {
+        "count": 532,
+        "macro_f05": 0.8326348354279923,
+        "macro_precision": 0.9018796992481203,
+        "macro_recall": 0.7139657178660938,
+        "avg_pred_matches": 2.800751879699248,
+        "false_positive_rate": 2.953020134228188
+      }
+    },
+    "countries": {
+      "US": {
+        "macro_f05": 0.8593121434821122,
+        "macro_precision": 0.9257914338919927,
+        "macro_recall": 0.7431497738760309,
+        "total_s1": 358,
+        "empty_pred_pct": 11.1731843575419,
+        "avg_pred_matches": 2.6089385474860336,
+        "total_pred_matches": 934
+      },
+      "India": {
+        "macro_f05": 0.7986759022454032,
+        "macro_precision": 0.8529986052998606,
+        "macro_recall": 0.7103855349671249,
+        "total_s1": 239,
+        "empty_pred_pct": 15.481171548117153,
+        "avg_pred_matches": 2.4435146443514646,
+        "total_pred_matches": 584
+      }
+    }
+  },
+  "generalization_gap": {
+    "p10_dev_f05": 0.8512,
+    "p11_hold_f05": 0.8350373333387731,
+    "p51_bench_f05": 0.8122,
+    "gap_f05": 0.0161626666612269,
+    "gap_precision": 0.016050083752093824,
+    "gap_recall": 0.015266897981973226,
+    "gap_e2e_recall": 2.380776699029113,
+    "gap_blocker_recall": 0.7931067961165041
+  },
+  "error_analysis": {
+    "fp_categories": {
+      "Franchise / Brand": 1,
+      "Address Number Match": 2,
+      "Other / Lexical Shift": 11,
+      "Native Script": 5,
+      "OCR / Typo": 1,
+      "Same Building": 1,
+      "Missing Address": 7,
+      "Shared Address Token": 2
+    },
+    "fn_class_categories": {
+      "Franchise / Brand": 3,
+      "Missing Address": 11,
+      "Shared Address Token": 4,
+      "Other / Lexical Shift": 7,
+      "Native Script": 3,
+      "Address Number Match": 2
+    },
+    "block_miss_categories": {
+      "Address Number Match": 6,
+      "Other / Lexical Shift": 11,
+      "Native Script": 9,
+      "Aliases / Trade Names": 2,
+      "Shared Address Token": 1,
+      "OCR / Typo": 1
+    },
+    "fp_sample": [
+      {
+        "s1_id": "S1-320094808",
+        "cand_id": "S3-356262606",
+        "score": 0.9986,
+        "category": "Franchise / Brand",
+        "s1_name": "Pawansut Industries Group",
+        "cand_name": "Pawansut Industries Group",
+        "s1_addr": "Plot No-151 A, Kh No. 109, Blk-A Ugf Gali No-8, New Delhi, South West Delhi, Delhi",
+        "cand_addr": "Plot No-153 A, Kh No. 109, Blk-a Ugf Gali No-8, New Delhi, South West Delhi, DL"
+      },
+      {
+        "s1_id": "S1-413862512",
+        "cand_id": "S2-881643124",
+        "score": 0.9975,
+        "category": "Address Number Match",
+        "s1_name": "Vantelle Plutonian",
+        "cand_name": "VANTELLO PLUTONIAN",
+        "s1_addr": "810 5th Street, Unit 2, Tempe, AZ",
+        "cand_addr": "810 5th St, TEMPE, AZ"
+      },
+      {
+        "s1_id": "S1-990759721",
+        "cand_id": "S2-439858377",
+        "score": 0.9914,
+        "category": "Other / Lexical Shift",
+        "s1_name": "WXT Strategic Data LLC",
+        "cand_name": "Lerner Strategic Data LLC",
+        "s1_addr": "6108 Wynnwood Road, Bethesda, MD",
+        "cand_addr": "6108 WYNNWOOD RD, BETHESDA, MD"
+      },
+      {
+        "s1_id": "S1-799709383",
+        "cand_id": "S3-991195876",
+        "score": 0.9885,
+        "category": "Other / Lexical Shift",
+        "s1_name": "Austin Mountain Islands",
+        "cand_name": "Zavaleta Mountain Islands",
+        "s1_addr": "3507 Ponderosa Drive, Grand Prairie, TX",
+        "cand_addr": "3507 Ponerosa Dr, Grand Prairie, Texas"
+      },
+      {
+        "s1_id": "S1-780502827",
+        "cand_id": "S3-528495423",
+        "score": 0.9867,
+        "category": "Other / Lexical Shift",
+        "s1_name": "Congregation Community Church",
+        "cand_name": "Congregation Community Church Valley",
+        "s1_addr": "WI, Unit Site 69, Town Of Alma, N11702 Elker Road",
+        "cand_addr": "N11713 Elker Rd, Unit Site 69, Town Of Alma, Wisconsin"
+      },
+      {
+        "s1_id": "S1-78396716",
+        "cand_id": "S2-387174066",
+        "score": 0.985,
+        "category": "Other / Lexical Shift",
+        "s1_name": "Foundation Networks Technologies LLP",
+        "cand_name": "LLP Foundation Networks Laboratories",
+        "s1_addr": "K-118/E-1, Ground Floor, 6Th Avenue, K Block Boughan Villa Apartments, Annanagar(E), Chennai, Tamil Nadu",
+        "cand_addr": "K-118/E-12, CHENNAI, Tamil Nadu"
+      },
+      {
+        "s1_id": "S1-67628861",
+        "cand_id": "S2-987337359",
+        "score": 0.9825,
+        "category": "Other / Lexical Shift",
+        "s1_name": "Nsn Scientific (India) Private Limited",
+        "cand_name": "Public Nsn Scientific (India) Limited",
+        "s1_addr": "1St Flr, Kagalwala House, C Block, Metro Es 175, Cst Road, Kalina, Santacruz East, Mumbai, Mumbai City, Maharashtra",
+        "cand_addr": "005ST FLR, KAGALWALA HOUSE, C BLOCK, METRO ES 175, CST ROAD, KALINA, SANTACRUZ EAST, MUMBAI, MUMBAI CITY, Maharashtra"
+      },
+      {
+        "s1_id": "S1-523444268",
+        "cand_id": "S2-479896941",
+        "score": 0.981,
+        "category": "Address Number Match",
+        "s1_name": "Orbance Gores Inc",
+        "cand_name": "Orbanke Gores",
+        "s1_addr": "MT, Lewistown, 120 Lasso Lane",
+        "cand_addr": "120 LASSO LN, null, LEWISTOWN, MT"
+      },
+      {
+        "s1_id": "S1-585596917",
+        "cand_id": "S3-365371679",
+        "score": 0.9751,
+        "category": "Native Script",
+        "s1_name": "Bharat Industries Private Limited",
+        "cand_name": "\u0c38\u0c4c\u0c24\u0c4d \u0c07\u0c02\u0c1f\u0c30\u0c4d\u0c28\u0c47\u0c37\u0c28\u0c32\u0c4d \u0c2a\u0c4d\u0c30\u0c48\u0c35\u0c47\u0c1f\u0c4d \u0c32\u0c3f\u0c2e\u0c3f\u0c1f\u0c46\u0c21\u0c4d",
+        "s1_addr": "13-04-16/1, Flat No.106, Ground Floor Gayathri Res., Matwada, Warangal, Warangal Urban, Telangana",
+        "cand_addr": "Andhra Pradesh, Warangal, 13-04-16/1, Warangal Urban, Flat No.106, Ground Floor Gayathri Res., Matwada"
+      },
+      {
+        "s1_id": "S1-867189499",
+        "cand_id": "S2-458941742",
+        "score": 0.9712,
+        "category": "OCR / Typo",
+        "s1_name": "Caldance Monte LLC",
+        "cand_name": "CALDANCO MONTE LLC",
+        "s1_addr": "875 Academy Street, Charlotte, NC",
+        "cand_addr": "884 ACADEMY STREET, CHARLOTTE, NC"
+      }
+    ],
+    "fn_class_sample": [
+      {
+        "s1_id": "S1-835419677",
+        "cand_id": "S2-574073517",
+        "score": 0.0007,
+        "category": "Franchise / Brand",
+        "s1_name": "Lissi C. Ford, P.A.",
+        "cand_name": "LISSI C. FORD, P.A.",
+        "s1_addr": "N7888 N G, Town Of Oma, WI",
+        "cand_addr": "G, MERCER, WI"
+      },
+      {
+        "s1_id": "S1-546325650",
+        "cand_id": "S2-588555098",
+        "score": 0.0036,
+        "category": "Missing Address",
+        "s1_name": "Physical Therapy Specialists",
+        "cand_name": "Physical Therapy Specialists Corp",
+        "s1_addr": "3102 3990, Winnsboro, TX",
+        "cand_addr": null
+      },
+      {
+        "s1_id": "S1-786170207",
+        "cand_id": "S3-156883737",
+        "score": 0.0047,
+        "category": "Franchise / Brand",
+        "s1_name": "Matti Valverde, DDS LLC",
+        "cand_name": "Matti Valverde, Dds Llc",
+        "s1_addr": "1712 21st Street, Redmond, OR",
+        "cand_addr": "21th Saint, Redmnd, Oregon"
+      },
+      {
+        "s1_id": "S1-494937590",
+        "cand_id": "S2-248726432",
+        "score": 0.005,
+        "category": "Shared Address Token",
+        "s1_name": "U & X Builders Inc",
+        "cand_name": "Brixveo",
+        "s1_addr": "TN, 3633 Falkirk Way, Ooltewah",
+        "cand_addr": "363 FALKIRK WAY, OOLTEWAH, TN"
+      },
+      {
+        "s1_id": "S1-60550637",
+        "cand_id": "S2-666969591",
+        "score": 0.0059,
+        "category": "Other / Lexical Shift",
+        "s1_name": "Mizner Creative Rocket",
+        "cand_name": "MIZNER MIZNER CRCEVE ROCKET",
+        "s1_addr": "1 Squadron Boulevard, Unit Unit B-5, Clarkstown, NY",
+        "cand_addr": "1 SQUARON BOULEVARD, NEW CITY, NY"
+      },
+      {
+        "s1_id": "S1-866369736",
+        "cand_id": "S2-580478902",
+        "score": 0.0067,
+        "category": "Other / Lexical Shift",
+        "s1_name": "CDR Digital, Inc",
+        "cand_name": "CDR DIGITAL,",
+        "s1_addr": "Grove, NY, 11852 16",
+        "cand_addr": "11852D 16, DALTON, NY"
+      },
+      {
+        "s1_id": "S1-783575505",
+        "cand_id": "S3-736775419",
+        "score": 0.0105,
+        "category": "Other / Lexical Shift",
+        "s1_name": "Aditya Best International Private Limited",
+        "cand_name": "Aditya Berst International Private Private Limited",
+        "s1_addr": "60Ff, Gajanand Park Soc-2, B/H Chikuvadi, Puna Road, Choryasi, Surat, Gujarat",
+        "cand_addr": "60Ff, Surat, NULL, \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4"
+      },
+      {
+        "s1_id": "S1-228678189",
+        "cand_id": "S2-163859376",
+        "score": 0.0128,
+        "category": "Native Script",
+        "s1_name": "Innovative Investments Private Limited",
+        "cand_name": "\u0d07\u0d28\u0d4d\u0d28\u0d4a\u0d35\u0d47\u0d31\u0d4d\u0d31\u0d40\u0d35\u0d4d \u0d07\u0d7b\u0d35\u0d46\u0d38\u0d4d\u0d31\u0d4d\u0d31\u0d4d\u0d2e\u0d46\u0d28\u0d4d\u0d31\u0d4d\u0d38\u0d4d \u0d2a\u0d4d\u0d30\u0d48\u0d35\u0d31\u0d4d\u0d31\u0d4d \u0d32\u0d3f\u0d2e\u0d3f\u0d31\u0d4d\u0d31\u0d21\u0d4d",
+        "s1_addr": "Puthuppallil House, Koorali P O, Elamgulam, Kottayam, Kerala",
+        "cand_addr": "PUTHUPPALLIL HOUSE, KOTTAYAM, Keralam"
+      },
+      {
+        "s1_id": "S1-250510039",
+        "cand_id": "S2-405533506",
+        "score": 0.014,
+        "category": "Shared Address Token",
+        "s1_name": "EAP Alutech Company",
+        "cand_name": "Vantageavi",
+        "s1_addr": "C-1248, Arawali Marg, Lucknow, Uttar Pradesh",
+        "cand_addr": "C-124, ARAWALI MARG, LUCKNOW, Uttar Pradesh"
+      },
+      {
+        "s1_id": "S1-585596917",
+        "cand_id": "S3-870808310",
+        "score": 0.0156,
+        "category": "Missing Address",
+        "s1_name": "Bharat Industries Private Limited",
+        "cand_name": "Bharat Industries",
+        "s1_addr": "13-04-16/1, Flat No.106, Ground Floor Gayathri Res., Matwada, Warangal, Warangal Urban, Telangana",
+        "cand_addr": null
+      }
+    ],
+    "block_miss_sample": [
+      {
+        "s1_id": "S1-108314429",
+        "cand_id": "S3-689715676",
+        "category": "Address Number Match",
+        "s1_name": "Supreme Dream It",
+        "cand_name": "Supreme",
+        "s1_addr": "Office No F-39, First Floor Eternity Commercial Premises, Lbs Marg, Teen Hath Naka, Thane, Maharashtra",
+        "cand_addr": "Office No F-39, First Floor Eternity Commercial Premises, Lbs Marg, Teen Hath Naka, Thane, Maharashtra"
+      },
+      {
+        "s1_id": "S1-311090979",
+        "cand_id": "S3-651529833",
+        "category": "Other / Lexical Shift",
+        "s1_name": "Brewster Rivernorth LLC",
+        "cand_name": "Brewster LLC Services",
+        "s1_addr": "Charlotte, NC, 1307 Briar Creek Road",
+        "cand_addr": "1307 Briar Creek Road, Charltote CITY, North Carolina"
+      },
+      {
+        "s1_id": "S1-211678907",
+        "cand_id": "S3-856847053",
+        "category": "Other / Lexical Shift",
+        "s1_name": "Creative Systems Private Limited",
+        "cand_name": "Creative Private Limited 5ervices",
+        "s1_addr": "Plot No - 12P1, Biada Industrial, Area Ward No - 4, Jhanjharpur, Madhubani, Bihar",
+        "cand_addr": "#850 Plot No - 12P1, Jhanjharpur, Madhubani, BR"
+      },
+      {
+        "s1_id": "S1-874682146",
+        "cand_id": "S2-437485334",
+        "category": "Native Script",
+        "s1_name": "Jay Infrastructure Pvt Ltd",
+        "cand_name": "\u0a9c\u0aaf \u0a87\u0aa8\u0acd\u0aab\u0acd\u0ab0\u0abe\u0ab8\u0acd\u0a9f\u0acd\u0ab0\u0a95\u0acd\u0a9a\u0ab0 \u0aaa\u0acd\u0ab0\u0abe. \u0ab2\u0abf.",
+        "s1_addr": "187 Sainagar Soc, Dindoli, Mangrol, Surat, Gujarat",
+        "cand_addr": "#187 SAINAGAR SOC, DINDOLI, MANGROL, SURAT, Gujarat"
+      },
+      {
+        "s1_id": "S1-661173194",
+        "cand_id": "S3-245379002",
+        "category": "Address Number Match",
+        "s1_name": "Zeal Transport Company",
+        "cand_name": "Zeal",
+        "s1_addr": "Madhya Pradesh, Jabalpur, H.No.136, Ravindra Nagar, Adhartal",
+        "cand_addr": "H.No.136, Ravindra Nagar, Adhartal, Jabalpur, Madhya Pradesh"
+      },
+      {
+        "s1_id": "S1-48453378",
+        "cand_id": "S3-243170531",
+        "category": "Address Number Match",
+        "s1_name": "TD Research, LLC",
+        "cand_name": "Veodeltaonyx",
+        "s1_addr": "3704 Boxwood Court, Arlington, TX",
+        "cand_addr": "3704 Boxwood Ct, Arlington, Texas"
+      },
+      {
+        "s1_id": "S1-134701923",
+        "cand_id": "S3-205042399",
+        "category": "Other / Lexical Shift",
+        "s1_name": "Gutierrez Jpmorgan Inc",
+        "cand_name": "Gutierrez Jpmdagran Inc",
+        "s1_addr": "303 105th Street, Lincoln, NE",
+        "cand_addr": "303-305 105th St, Lincoln, Nebraska"
+      },
+      {
+        "s1_id": "S1-979509841",
+        "cand_id": "S3-189267540",
+        "category": "Other / Lexical Shift",
+        "s1_name": "Golden Medical Alliance",
+        "cand_name": "Medical Golden Alliance",
+        "s1_addr": "307 Riggs Road, Unit 419, Washington, DC",
+        "cand_addr": "Washington, District of Columbia, 307-309 Riggs Rd, # 419"
+      },
+      {
+        "s1_id": "S1-753495835",
+        "cand_id": "S2-518701172",
+        "category": "Address Number Match",
+        "s1_name": "Orbic Indigo",
+        "cand_name": "Deltaorbiiri",
+        "s1_addr": "1779 Mill Lane, Millcreek, UT",
+        "cand_addr": "SALT LAKE CITY, 1779 MILL LN, UT"
+      },
+      {
+        "s1_id": "S1-869118709",
+        "cand_id": "S2-101031958",
+        "category": "Native Script",
+        "s1_name": "Southern Healthcare Private Limited",
+        "cand_name": "\u0938\u0926\u0930\u094d\u0928 \u0939\u0947\u0932\u094d\u0925\u0915\u0947\u092f\u0930 \u092a\u094d\u0930\u093e\u0907\u0935\u0947\u091f \u0932\u093f\u092e\u093f\u091f\u0947\u0921",
+        "s1_addr": "D-10 Empire Residency Nea, R Agarwal Public School, Indore, Madhya Pradesh",
+        "cand_addr": "D-0010 EMPIRE RESIDENCY NEA, INDORE, Madhya Pradesh"
+      }
+    ]
+  }
+}
